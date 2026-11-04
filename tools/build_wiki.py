@@ -92,16 +92,18 @@ Hier vind je {len(S)} skills en skillpakketten, verdeeld over {len(CATS)} catego
 # ───────── home ─────────
 w("README.md", fm("house", "De Nederlandstalige gids voor Claude-skills: uitleg, voorbeelden en installatie per skill.", "home", 0, hero=True) + f"""# Welkom bij de Claude Wiki
 
-**Skills maken Claude slimmer in precies het werk dat jij doet.** In deze wiki leggen we in gewoon Nederlands uit wat skills zijn, hoe je ze installeert en welke skills de moeite waard zijn: van de officiële skills van Anthropic tot de toppers die influencers op Instagram en TikTok delen.
+**Skills maken Claude slimmer in precies het werk dat jij doet.** In deze wiki vind je {len(S)} uitgewerkte skills in {len(CATS)} categorieën plus een catalogus van alle plugins uit de officiële marketplace. We leggen in gewoon Nederlands uit wat skills zijn, hoe je ze installeert en welke skills de moeite waard zijn: van de officiële skills van Anthropic tot de toppers die influencers op Instagram en TikTok delen.
 
-<a href="basis/wat-zijn-skills.md" class="button primary" data-icon="rocket">Begin hier</a> <a href="skills/README.md" class="button secondary" data-icon="grid-2">Bekijk alle skills</a>
+<a href="adviseur/README.md" class="button primary" data-icon="wand-magic-sparkles">Vind jouw skill</a> <a href="basis/wat-zijn-skills.md" class="button secondary" data-icon="rocket">Begin hier</a> <a href="skills/README.md" class="button secondary" data-icon="grid-2">Bekijk alle skills</a>
 
 ## Waar wil je beginnen?
 
 {cards([
+    ("Skill-adviseur", "Vertel wat je wilt doen en krijg direct de beste skill met installatiecommando.", "adviseur/README.md", "adviseur"),
     ("Wat zijn skills?", "In 5 minuten snappen hoe skills werken en waarom ze zo handig zijn.", "basis/wat-zijn-skills.md", "basis"),
     ("Installeren", "Stap voor stap: in de Claude-app, in Claude Code en via npx.", "basis/skills-installeren.md", "basis"),
     ("Gespot op social", "De skills die Bart Boonstra en andere creators aanraden.", "gespot-op-social/README.md", "social"),
+    ("Plugin-catalogus", "Alle plugins uit de officiële Claude Code-marketplace op een rij.", "catalogus/README.md", "catalogus"),
     ("Zelf een skill maken", "Van idee tot werkende SKILL.md in een kwartier.", "basis/eigen-skill-maken.md", "bouwen"),
 ], 0)}
 
@@ -627,3 +629,191 @@ summ += ["\n## Meer\n", "* [Bronnen & marketplaces](bronnen/README.md)",
 w("SUMMARY.md", "\n".join(summ) + "\n")
 w(".gitbook.yaml", "root: ./\n\nstructure:\n  readme: README.md\n  summary: SUMMARY.md\n")
 print("ok", len(S))
+
+# ═════════ CATALOGUS (officiële marketplace) ═════════
+import json, re
+M = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "marketplace-official.json")))["plugins"]
+CATNL = {"development": ("Ontwikkeling", "code"), "productivity": ("Productiviteit", "list-check"),
+         "database": ("Databases", "database"), "monitoring": ("Monitoring & observability", "chart-line"),
+         "security": ("Security", "shield-halved"), "deployment": ("Deployen & hosting", "rocket"),
+         "design": ("Design", "palette"), "automation": ("Automatisering", "gears"),
+         "learning": ("Leren & uitlegstijl", "graduation-cap"), "location": ("Locatie & kaarten", "map-location-dot"),
+         "testing": ("Testen", "vial"), "math": ("Wiskunde", "square-root-variable"),
+         "migration": ("Migratie", "right-left"), None: ("Overig", "shapes")}
+def mdesc(s):
+    return re.sub(r"\s+", " ", (s or "").replace("|", "/")).strip()
+groups = {}
+for p in M:
+    groups.setdefault(p.get("category"), []).append(p)
+order = sorted(groups, key=lambda c: -len(groups[c]))
+def catslug(c): return (c or "overig")
+for c in order:
+    nl, ic = CATNL.get(c, (c, "shapes"))
+    rows = sorted(groups[c], key=lambda p: p["name"])
+    body = fm(ic, f"{len(rows)} plugins uit de officiële Claude Code-marketplace in de categorie {nl}.", "catalogus", 1)
+    body += f"# {nl}\n\n{len(rows)} plugins. Installeren in Claude Code: `/plugin install <naam>@claude-plugins-official`.\n\n"
+    body += "| Plugin | Maker | Wat het doet (beschrijving van de maker) | Installeren |\n| --- | --- | --- | --- |\n"
+    for p in rows:
+        a = (p.get("author") or {}).get("name", "") if isinstance(p.get("author"), dict) else ""
+        hp = p.get("homepage")
+        nm = f"[**{p['name']}**]({hp})" if hp else f"**{p['name']}**"
+        body += f"| {nm} | {a} | {mdesc(p.get('description'))} | `/plugin install {p['name']}@claude-plugins-official` |\n"
+    w(f"catalogus/{catslug(c)}.md", body)
+w("catalogus/README.md", fm("store", f"Alle {len(M)} plugins uit de officiële Claude Code-marketplace, per categorie.", "catalogus", 1) + f"""# Plugin-catalogus
+
+De officiële marketplace van Anthropic (`claude-plugins-official`) telt op dit moment **{len(M)} plugins**: van Anthropic zelf en van bedrijven als Google, AWS, Microsoft, Stripe, Figma, Notion, Canva, Shopify en Supabase. Deze marketplace is in Claude Code standaard al gekoppeld.
+
+{{% hint style="info" %}}
+**Installeren:** typ in Claude Code `/plugin install <naam>@claude-plugins-official`, of blader via `/plugin` → **Discover**. Plugins van derden bevatten soms MCP-servers of software die Anthropic niet beheert: installeer alleen wat je vertrouwt.
+{{% endhint %}}
+
+{cards([(CATNL.get(c,(c,''))[0], f"{len(groups[c])} plugins", f"{catslug(c)}.md", None) for c in order], 1)}
+
+{{% hint style="success" %}}
+Weet je niet welke je nodig hebt? Gebruik de [Skill-adviseur](../adviseur/README.md): beschrijf wat je wilt en je krijgt de beste opties.
+{{% endhint %}}
+
+*Gegenereerd uit [marketplace.json](https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json), november 2026. De beschrijvingen zijn van de makers zelf (Engels).*
+""")
+
+# ═════════ DATA voor de adviseur ═════════
+ADV = []
+CN = {c[0]: c[1] for c in CATS}
+for s in S:
+    inst = re.findall(r"```bash\n(.*?)\n```", s["install"], re.S)
+    ADV.append({"n": s["name"], "t": s["tagline"], "c": CN[s["cat"]], "w": s["werkt"], "m": s["maker"],
+                "p": f"skills/{s['cat']}/{s['slug']}", "i": inst[0].strip() if inst else "",
+                "k": " ".join([s["wat"][:600], " ".join(s["wanneer"]), " ".join(v[0] for v in s["voorbeelden"])]),
+                "o": 1 if "Anthropic" in s["maker"] or "officieel" in s["maker"] else 0, "src": "wiki"})
+for p in M:
+    a = (p.get("author") or {}).get("name", "") if isinstance(p.get("author"), dict) else ""
+    ADV.append({"n": p["name"], "t": mdesc(p.get("description"))[:260], "c": "Marketplace · " + CATNL.get(p.get("category"), ("Overig",))[0],
+                "w": "Claude Code", "m": a, "p": f"catalogus/{catslug(p.get('category'))}", "h": p.get("homepage", ""),
+                "i": f"/plugin install {p['name']}@claude-plugins-official", "k": "", "o": 1 if a == "Anthropic" else 0, "src": "mp"})
+os.makedirs(os.path.join(ROOT, "docs"), exist_ok=True)
+json.dump(ADV, open(os.path.join(ROOT, "docs", "skills.json"), "w"), ensure_ascii=False)
+
+# ═════════ Installeerbare zoek-skill ═════════
+lines = ["# Catalogus", "", "Formaat: naam | categorie | werkt in | wat het doet | installeren | wikipagina", ""]
+for x in ADV:
+    lines.append(f"- {x['n']} | {x['c']} | {x['w']} | {x['t']} | `{x['i']}` | {x['p']}")
+w("skill-adviseur/skill-adviseur/references/catalogus.md", "\n".join(lines) + "\n")
+w("skill-adviseur/skill-adviseur/SKILL.md", """---
+name: skill-adviseur
+description: Adviseert welke Claude-skill of plugin het beste past bij wat de gebruiker wil doen, met uitleg en installatiecommando. Gebruik wanneer iemand vraagt welke skill, plugin of tool hij nodig heeft, zoekt naar een skill voor een taak ("is er een skill voor…", "welke skill moet ik installeren", "hoe kan Claude beter … "), of zijn Claude-setup wil uitbreiden.
+---
+
+# Skill-adviseur
+
+Je helpt de gebruiker de best passende Claude-skill(s) of plugin(s) te kiezen. Antwoord in de taal van de gebruiker (standaard Nederlands).
+
+## Werkwijze
+
+1. **Begrijp de vraag.** Wat wil de gebruiker bereiken, in welk programma werkt hij (Claude-app, Claude Code of allebei) en hoe technisch is hij? Is dat onduidelijk en maakt het uit voor het advies, stel dan één korte vraag.
+2. **Zoek in de catalogus.** Lees `references/catalogus.md` en zoek op betekenis, niet alleen op letterlijke woorden (bijv. "presentatie" → pptx, slides, deck; "tekst minder AI" → humanizer).
+3. **Kies maximaal 3 opties**, de beste eerst. Geef de voorkeur aan:
+   - skills die werken waar de gebruiker werkt (Claude-app vs. Claude Code);
+   - officiële skills (Anthropic of de maker van de tool) boven community-skills bij gelijke geschiktheid;
+   - één goede skill boven drie die overlappen.
+4. **Geef per optie:** naam, één zin waarom deze past, waar hij werkt en het installatiecommando in een codeblok. Verwijs naar de wikipagina: `https://github.com/LRvdLinden/app.lrvdlinen.claudwiki/blob/main/<wikipagina>.md`.
+5. **Past niets goed?** Zeg dat eerlijk en stel voor om zelf een skill te maken met `skill-creator`, of zoek op https://skills.sh.
+
+## Regels
+
+- Verzin geen skills, repo's of commando's die niet in de catalogus staan.
+- Waarschuw kort bij community-skills: lees de SKILL.md voor installatie.
+- Houd het kort: geen lange inleiding, direct de aanbevelingen.
+""")
+import shutil, zipfile
+zp = os.path.join(ROOT, ".gitbook/assets/skill-adviseur.zip")
+with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
+    for base, _, files in os.walk(os.path.join(ROOT, "skill-adviseur/skill-adviseur")):
+        for f in files:
+            full = os.path.join(base, f)
+            z.write(full, os.path.relpath(full, os.path.join(ROOT, "skill-adviseur")))
+
+# ═════════ Adviseur-pagina in de wiki ═════════
+ADV_URL = "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/"
+w("adviseur/README.md", fm("wand-magic-sparkles", "Vertel wat je wilt doen en krijg direct de best passende skill, met installatiecommando.", "adviseur", 1) + f"""# Skill-adviseur
+
+Weet je niet welke skill je nodig hebt? Beschrijf in gewone taal wat je wilt doen, en de adviseur zoekt in **{len(ADV)} skills en plugins** de beste opties voor je, met uitleg en installatiecommando.
+
+<a href="{ADV_URL}" class="button primary" data-icon="magnifying-glass">Open de Skill-adviseur</a>
+
+{{% embed url="{ADV_URL}" %}}
+Skill-adviseur: zoek de beste skill voor jouw taak
+{{% endembed %}}
+
+## Drie manieren om advies te krijgen
+
+{{% tabs %}}
+{{% tab title="In je browser" %}}
+Open de [Skill-adviseur]({ADV_URL}) en typ wat je wilt, bijvoorbeeld:
+
+* *"Ik wil video's maken voor Instagram"*
+* *"Mijn teksten klinken te veel als AI"*
+* *"Ik bouw een iPhone-app in SwiftUI"*
+* *"Ik wil facturen ordenen voor de belasting"*
+
+Je krijgt direct de best passende skills, met waar ze werken en hoe je ze installeert.
+{{% endtab %}}
+
+{{% tab title="Als skill in Claude" %}}
+Installeer de **skill-adviseur** zelf. Daarna vraag je in elk gesprek: *"Welke skill heb ik nodig om …?"* en Claude adviseert uit dezelfde catalogus.
+
+**Claude-app:** download [skill-adviseur.zip](../.gitbook/assets/skill-adviseur.zip) en upload hem via **Instellingen → Mogelijkheden → Skills → Skill uploaden**.
+
+**Claude Code:**
+
+```bash
+git clone https://github.com/LRvdLinden/app.lrvdlinen.claudwiki.git
+cp -r app.lrvdlinen.claudwiki/skill-adviseur/skill-adviseur ~/.claude/skills/
+```
+{{% endtab %}}
+
+{{% tab title="Zoeken in de wiki" %}}
+Gebruik de zoekbalk bovenaan deze wiki (of druk op <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>K</kbd>). Staat GitBook AI aan, dan kun je daar ook gewoon een vraag stellen.
+{{% endtab %}}
+{{% endtabs %}}
+
+{{% hint style="info" %}}
+De adviseur kijkt naar alle skills in deze wiki plus alle {len(M)} plugins uit de [officiële marketplace](../catalogus/README.md). Officiële skills krijgen bij gelijke score voorrang.
+{{% endhint %}}
+""")
+
+# ═════════ SUMMARY opnieuw (met catalogus + adviseur) ═════════
+summ = ["# Table of contents\n", "* [Welkom](README.md)",
+        "* [Skill-adviseur](adviseur/README.md)\n", "## Aan de slag\n",
+        "* [De basis](basis/README.md)",
+        "  * [Wat zijn skills?](basis/wat-zijn-skills.md)",
+        "  * [Skills installeren](basis/skills-installeren.md)",
+        "  * [Skills gebruiken](basis/skills-gebruiken.md)",
+        "  * [Je eigen skill maken](basis/eigen-skill-maken.md)",
+        "  * [Veilig installeren](basis/veiligheid.md)",
+        "* [Gespot op social](gespot-op-social/README.md)\n",
+        "## Skills per categorie\n", "* [Alle skills](skills/README.md)"]
+for slug, title, icon, intro in CATS:
+    summ.append(f"* [{title}](skills/{slug}/README.md)")
+    for s in [x for x in S if x["cat"] == slug]:
+        summ.append(f"  * [{s['name']}](skills/{slug}/{s['slug']}.md)")
+summ += [f"\n## Plugin-catalogus ({len(M)})\n", "* [Overzicht](catalogus/README.md)"]
+for c in order:
+    summ.append(f"  * [{CATNL.get(c,(c,''))[0]} ({len(groups[c])})](catalogus/{catslug(c)}.md)")
+summ += ["\n## Meer\n", "* [Bronnen & marketplaces](bronnen/README.md)",
+         "* [Veelgestelde vragen](bronnen/faq.md)", "* [Over deze wiki](bronnen/over.md)"]
+w("SUMMARY.md", "\n".join(summ) + "\n")
+print("catalogus", len(M), "adviseur", len(ADV))
+
+# ═════════ Adviseur-HTML (GitHub Pages + artifact) ═════════
+tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "adviseur_template.html")).read()
+data = json.dumps(ADV, ensure_ascii=False).replace("</", "<\\/")
+body = tpl.replace("__DATA__", data).replace("__WIKI_BASE__", os.environ.get("WIKI_BASE", ""))
+full = ('<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+        '<meta name="description" content="Vertel wat je wilt doen en krijg de best passende Claude-skill, met installatiecommando.">'
+        '<link rel="icon" href="mark.png"><style>[hidden]{display:none!important}</style></head><body>' + body + '</body></html>')
+w("docs/index.html", full)
+w("docs/.nojekyll", "")
+shutil.copy(os.path.join(ROOT, ".gitbook/assets/mark.png"), os.path.join(ROOT, "docs/mark.png"))
+art = os.environ.get("ARTIFACT_OUT")
+if art:
+    open(art, "w").write('<html lang="nl">' if False else body)

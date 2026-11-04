@@ -1,0 +1,283 @@
+<title>Skill-adviseur</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+/* Layout: één kolom, zoekpaneel bovenaan als 'console', resultaten als gerangschikte lijst. Huisstijl Claude Wiki. */
+:root{
+  --bg:#F6F6FB; --surface:#FFFFFF; --surface-2:#EEF0FA; --line:#DADDF0;
+  --fg:#12142B; --muted:#5A5F80; --accent:#5457E6; --accent-2:#9A4BEA; --spark:#E0A100;
+  --ok:#0F8A5F; --code-bg:#F0F1FA;
+  --display:"Inter Tight","Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0B0F1F; --surface:#121833; --surface-2:#1A2145; --line:#283062;
+  --fg:#EEF0FF; --muted:#A3A9D1; --accent:#8B8EFF; --accent-2:#C084FC; --spark:#FBBF24; --ok:#34D399; --code-bg:#0E1330; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0B0F1F; --surface:#121833; --surface-2:#1A2145; --line:#283062;
+  --fg:#EEF0FF; --muted:#A3A9D1; --accent:#8B8EFF; --accent-2:#C084FC; --spark:#FBBF24; --ok:#34D399; --code-bg:#0E1330; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:flex;flex-direction:column;gap:22px}
+header{display:flex;align-items:center;gap:14px}
+header svg{flex:none}
+.eyebrow{font:600 11px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font:800 clamp(28px,5vw,40px)/1.05 var(--display);letter-spacing:-.02em;margin:4px 0 0;text-wrap:balance}
+.lede{color:var(--muted);margin:0;max-width:62ch}
+.console{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px}
+label.q{font:600 13px var(--body);color:var(--muted)}
+textarea{width:100%;min-height:84px;resize:vertical;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:12px;padding:12px 14px;font:500 17px/1.4 var(--body)}
+textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:999px;padding:6px 12px;font:500 13px var(--body);cursor:pointer}
+.chip:hover{border-color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{border:0;background:transparent;color:var(--muted);padding:7px 12px;font:600 13px var(--body);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
+.toggle{display:flex;gap:8px;align-items:center;font:500 13px var(--body);color:var(--muted)}
+.ai{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn{border:0;border-radius:10px;padding:10px 14px;font:600 14px var(--body);cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
+.btn[disabled]{opacity:.6;cursor:progress}
+.note{font-size:12.5px;color:var(--muted)}
+.advice{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.advice h2{font:700 15px var(--display);margin:0 0 6px;display:flex;gap:8px;align-items:center}
+.advice p{margin:0;white-space:pre-wrap}
+.meta{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.meta h2{font:700 18px var(--display);margin:0}
+.count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:13px}
+ol.results{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:34px 1fr;gap:4px 12px}
+.card.top{border-color:var(--accent)}
+.card>*:not(.rank){grid-column:2}
+.rank{grid-row:1 / span 6;font:800 20px var(--display);color:var(--muted);font-variant-numeric:tabular-nums}
+.card.top .rank{color:var(--accent)}
+.title{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 10px;min-width:0}
+.title a,.title strong{font:700 16px var(--display);color:var(--fg);text-decoration:none}
+.title a:hover{text-decoration:underline}
+.badge{font:600 11px var(--body);letter-spacing:.04em;border-radius:6px;padding:2px 7px;background:var(--surface-2);color:var(--muted)}
+.badge.best{background:var(--spark);color:#1a1300}
+.badge.off{color:var(--ok)}
+.desc{margin:0;color:var(--fg);min-width:0}
+.sub{font-size:12.5px;color:var(--muted);min-width:0}
+.why{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--muted)}
+.why span{background:var(--surface-2);border-radius:6px;padding:1px 6px}
+.cmd{display:flex;gap:8px;align-items:stretch;min-width:0;margin-top:4px}
+.cmd code{flex:1;min-width:0;overflow-x:auto;white-space:pre;background:var(--code-bg);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font:500 12.5px var(--mono)}
+.copy{border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;padding:0 10px;font:600 12px var(--body);cursor:pointer}
+.empty{color:var(--muted);text-align:center;padding:24px}
+footer{color:var(--muted);font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 16px}
+footer a{color:var(--accent)}
+@media (prefers-reduced-motion:no-preference){.card{animation:in .25s ease both}@keyframes in{from{transform:translateY(4px);opacity:.4}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <svg width="48" height="48" viewBox="0 0 128 128" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><rect x="4" y="4" width="120" height="120" rx="30" fill="url(#g)"/><path d="M26 42c12-5 25-4 38 4v50c-13-8-26-9-38-4z" fill="#fff"/><path d="M102 42c-12-5-25-4-38 4v50c13-8 26-9 38-4z" fill="#fff" fill-opacity=".78"/><path d="M34 56h20M34 66h20M34 76h14" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/><path d="M97 14l4.5 10.5L112 29l-10.5 4.5L97 44l-4.5-10.5L82 29l10.5-4.5z" fill="#FBBF24" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
+    <div><div class="eyebrow">Claude Wiki</div><h1>Skill-adviseur</h1></div>
+  </header>
+  <p class="lede">Vertel in gewone taal wat je wilt doen. De adviseur zoekt in <strong id="total">alle</strong> skills en plugins de beste opties, met waar ze werken en hoe je ze installeert.</p>
+
+  <section class="console" aria-label="Zoeken">
+    <label class="q" for="q">Wat wil je met Claude doen?</label>
+    <textarea id="q" placeholder="Bijv. ‘Ik wil van mijn notulen een nette nieuwsbrief maken’"></textarea>
+    <div class="chips" id="chips"></div>
+    <div class="row">
+      <div class="seg" role="group" aria-label="Waar gebruik je Claude?">
+        <button id="f-all" aria-pressed="true">Overal</button>
+        <button id="f-app" aria-pressed="false">Claude-app</button>
+        <button id="f-code" aria-pressed="false">Claude Code</button>
+      </div>
+      <label class="toggle"><input type="checkbox" id="mp" checked> Ook marketplace-plugins</label>
+    </div>
+    <div class="ai" id="ai" hidden>
+      <button class="btn" id="ask">Vraag Claude om persoonlijk advies</button>
+      <span class="note">Claude leest je vraag en de beste kandidaten en legt uit welke je moet nemen.</span>
+    </div>
+  </section>
+
+  <section class="advice" id="advice" hidden aria-live="polite"><h2>✦ Advies van Claude</h2><p id="advice-text"></p></section>
+
+  <section aria-live="polite">
+    <div class="meta"><h2 id="rh">Populair om mee te beginnen</h2><span class="count" id="count"></span></div>
+    <ol class="results" id="results"></ol>
+  </section>
+
+  <footer>
+    <span>Onofficiële wiki door LRvdLinden · Claude is een product van Anthropic</span>
+    <a href="https://github.com/LRvdLinden/app.lrvdlinen.claudwiki" target="_blank" rel="noopener">Bron op GitHub</a>
+  </footer>
+</div>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+(function(){
+const WIKI_BASE = "__WIKI_BASE__"; // GitBook-URL; leeg = GitHub
+const GH = "https://github.com/LRvdLinden/app.lrvdlinen.claudwiki/blob/main/";
+const DATA = JSON.parse(document.getElementById('data').textContent);
+const $ = s => document.querySelector(s);
+$('#total').textContent = DATA.length;
+
+const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+const STOP = new Set('ik je jij u we wij mijn mij me een de het en of van voor met in op aan te om dat die dit wil wilt willen kan kunnen moet graag maken maak doen hoe wat welke iets alle meer beter goed via naar bij als ook zo zijn is er heb hebben gebruik gebruiken claude skill skills plugin plugins the a an to of for with and my i want make'.split(' '));
+// Nederlandse woorden → termen die in de skills voorkomen
+const SYN = {
+ presentatie:['pptx','slides','presentation','deck','powerpoint','pitch'],dia:['slides','pptx'],powerpoint:['pptx','slides'],
+ word:['docx','document'],document:['docx','doc','pdf'],brief:['docx','letter','writing'],notulen:['docx','meeting','transcript','notes','internal-comms'],
+ nieuwsbrief:['newsletter','internal-comms','email','copywriting'],excel:['xlsx','spreadsheet','csv'],spreadsheet:['xlsx','sheets'],begroting:['xlsx','budget','spreadsheet'],
+ pdf:['pdf'],formulier:['pdf','form'],factuur:['invoice','facturen','bookkeeping'],facturen:['invoice'],bonnetjes:['invoice','receipt'],belasting:['invoice','tax'],
+ website:['web','frontend','landing','site','html','seo'],site:['web','frontend','seo'],landingspagina:['landing','frontend','copywriting','conversion'],
+ design:['design','ui','ux','frontend','style'],ontwerp:['design','ui','ux','figma'],mooi:['design','ui','aesthetic','frontend'],huisstijl:['brand','theme','design-system','brand-guidelines'],
+ logo:['brand','design','image'],poster:['canvas','poster','design'],flyer:['canvas','poster','design'],kleuren:['palette','theme','color'],
+ video:['remotion','video','animation','captions','youtube'],animatie:['remotion','animation','motion','gif'],filmpje:['remotion','video'],ondertitels:['captions','remotion','subtitles'],
+ gif:['gif','slack'],kunst:['art','generative','p5'],afbeelding:['image','imagen','canvas','picture'],foto:['image','enhancer'],plaatje:['image'],
+ tekst:['writing','copy','humanizer','text'],schrijven:['writing','copywriting','doc','content'],ai:['humanizer','ai'],menselijk:['humanizer','human'],klinkt:['humanizer'],
+ instagram:['instagram','reel','carousel','social','ig'],tiktok:['social','video','reel'],linkedin:['social','post','copywriting'],social:['social','instagram','content'],
+ carrousel:['carousel','instagram'],reel:['reel','instagram','video'],hashtag:['instagram','social'],marketing:['marketing','copywriting','seo','campaign'],
+ seo:['seo','search','schema'],google:['seo','google','gmail','workspace'],vindbaar:['seo'],
+ plannen:['plan','planning','brainstorm','spec','tasks'],plan:['plan','planning','spec'],brainstorm:['brainstorming','ideas','grill'],idee:['brainstorming','grill','ideas'],
+ eerlijk:['debate','critic','critique','grill'],tegenspraak:['debate','critic'],advies:['debate','strategy','discernment'],kritiek:['critique','critic','review','debate'],
+ beslissing:['decision','debate','strategy','options'],strategie:['strategy','debate'],
+ code:['code','development','engineering'],programmeren:['code','development','engineering'],bug:['debug','debugging','bugs','sentry'],fout:['debug','error','bug'],
+ testen:['test','testing','playwright','tdd'],test:['test','testing'],review:['review','code-review'],commit:['commit','git'],github:['github','git','pr'],
+ app:['app','ios','swift','swiftui','expo','mobile'],iphone:['ios','swift','swiftui','simulator','xcode'],ios:['ios','swift','swiftui','xcode'],ipad:['ios','swiftui'],
+ swift:['swift','swiftui','xcode'],xcode:['xcode','ios','build'],android:['expo','react-native','android'],
+ database:['database','postgres','sql','supabase','neon'],sql:['sql','postgres','query'],betalen:['stripe','payment','checkout'],betaling:['stripe','payment'],betalingen:['stripe','payment','checkout'],abonnement:['stripe','subscription'],
+ hosting:['deploy','vercel','cloudflare','hosting'],deployen:['deploy','vercel'],server:['server','mcp','cloud','aws'],cloud:['aws','azure','cloudflare','cloud'],
+ koppelen:['connect','mcp','integration','apps'],koppeling:['mcp','connect','integration'],automatiseren:['n8n','automation','workflow','zapier'],automatisering:['n8n','automation','workflow'],
+ mail:['gmail','email','outlook'],email:['email','gmail'],agenda:['calendar','google-calendar'],
+ onthouden:['memory','mem','remember'],geheugen:['memory','mem'],vergeten:['memory','handoff','planning'],notities:['obsidian','notes','notion'],obsidian:['obsidian'],notion:['notion'],
+ leren:['learn','learning','tutorial','teach'],uitleg:['explanatory','learning','teach'],samenvatten:['summary','summarize','transcript'],youtube:['youtube','transcript','video'],
+ onderzoek:['research','deep-research','last30days','firecrawl'],zoeken:['search','research','firecrawl'],trends:['last30days','research','trends'],
+ data:['data','csv','analysis','dashboard','visualization'],grafiek:['chart','d3','visualization','dashboard'],dashboard:['dashboard','data'],analyse:['analysis','data','csv'],
+ diagram:['diagram','excalidraw','mermaid','canvas'],tekening:['excalidraw','diagram','canvas'],
+ spraak:['speech','voice','elevenlabs','tts'],stem:['voice','elevenlabs'],muziek:['music','elevenlabs','sound'],podcast:['voice','elevenlabs','audio'],
+ beveiliging:['security','secure','audit','vulnerability'],veilig:['security'],hack:['security'],
+ cv:['resume','cv'],sollicitatie:['resume','job'],vacature:['resume','job'],
+ bestanden:['file','organizer','files'],opruimen:['organizer','cleanup','file'],mappen:['file','organizer','folder'],
+ skill:['skill-creator','skill'],eigen:['skill-creator','create'],
+ sales:['sales','crm','lead','prospect'],klanten:['customer','crm','support'],klantenservice:['customer-support','support','ticket'],juridisch:['legal','contract','nda'],contract:['legal','contract'],
+ finance:['finance','accounting'],boekhouding:['finance','invoice','accounting','quickbooks'],hr:['human-resources','recruiting','onboarding'],
+ winactie:['raffle','giveaway'],loterij:['raffle'],domein:['domain'],domeinnaam:['domain'],ebook:['epub'],stamboom:['family','genealogy'],
+ vergadering:['meeting','transcript'],voorzitter:['meeting','leadership'],kaart:['map','maps','location','d3'],
+ n8n:['n8n'],homey:['homey','mcp'],terraform:['terraform'],wordpress:['wordpress'],shopify:['shopify'],figma:['figma'],canva:['canva'],slack:['slack'],
+};
+const stem = w => w.replace(/(ingen|ingen|en|s|e)$/,'');
+function terms(q){
+  const words = norm(q).split(/[^a-z0-9\-+]+/).filter(w=>w.length>1 && !STOP.has(w));
+  const groups = [];
+  for(const w of [...new Set(words)]){
+    const g = [[w,1]];
+    const syn = SYN[w] || SYN[stem(w)] || [];
+    for(const s of syn) if(s!==w) g.push([s,.8]);
+    groups.push(g);
+  }
+  return groups;
+}
+const IDX = DATA.map(d => ({d, n:norm(d.n), t:norm(d.t), c:norm(d.c), k:norm(d.k), all:norm(d.n+' '+d.t+' '+d.c+' '+d.k+' '+d.i)}));
+function hit(hay, term){
+  if(term.length<4) return new RegExp('(^|[^a-z0-9])'+term.replace(/[-+]/g,'\\$&')+'([^a-z0-9]|$)').test(hay);
+  return hay.includes(term) || (term.length>5 && hay.includes(term.slice(0,-1)));
+}
+let filter = 'all';
+function search(q){
+  const T = terms(q), useMp = $('#mp').checked;
+  const res = [];
+  for(const x of IDX){
+    if(!useMp && x.d.src==='mp') continue;
+    if(filter==='app' && !/claude-app/i.test(x.d.w)) continue;
+    if(filter==='code' && !/claude code/i.test(x.d.w)) continue;
+    let s=0, matched=0; const why=[];
+    for(const g of T){
+      let best=0, bt='';
+      for(const [term,wt] of g){
+        let p=0;
+        if(hit(x.n,term)) p+=6; if(hit(x.t,term)) p+=3; if(hit(x.c,term)) p+=2; if(x.k && hit(x.k,term)) p+=1.5;
+        if(!p && hit(x.all,term)) p+=.5;
+        if(p*wt>best){best=p*wt; bt=term;}
+      }
+      if(best){ s+=best; matched++; if(why.length<5) why.push(bt); }
+    }
+    if(s>0){
+      s *= 1 + .35*(matched-1);
+      if(x.d.src==='wiki') s*=1.25;
+      if(x.d.o) s*=1.08;
+      res.push({d:x.d,s,why});
+    }
+  }
+  res.sort((a,b)=>b.s-a.s);
+  const top=res.length?res[0].s:0;
+  return res.filter(r=>r.s>=top*.22);
+}
+const POPULAR = ['Skill Creator','Superpowers','UI UX Pro Max','Humanizer','Remotion','Word (docx)','PowerPoint (pptx)','Grill Me & Handoff'];
+function link(d){
+  if(WIKI_BASE) return WIKI_BASE.replace(/\/$/,'')+'/'+d.p.replace(/\/README$/,'');
+  return GH+d.p+'.md';
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function render(list, heading){
+  $('#rh').textContent = heading;
+  const ol = $('#results'); ol.innerHTML='';
+  $('#count').textContent = list.length ? (list.length>12?'top 12 van '+list.length:list.length+' gevonden') : '';
+  if(!list.length){ ol.innerHTML='<li class="empty">Niets gevonden. Probeer andere woorden, zet de filters op ‘Overal’, of maak je eigen skill met <strong>Skill Creator</strong>.</li>'; return; }
+  list.slice(0,12).forEach((r,i)=>{
+    const d=r.d, li=document.createElement('li');
+    li.className='card'+(i<3?' top':'');
+    li.innerHTML = `<div class="rank">${i+1}</div>
+      <div class="title"><a href="${esc(link(d))}" target="_blank" rel="noopener">${esc(d.n)}</a>
+        ${i===0&&r.why?'<span class="badge best">Beste keuze</span>':''}
+        ${d.o?'<span class="badge off">Officieel</span>':''}${d.src==='mp'?'<span class="badge">Officiële marketplace</span>':''}
+        ${d.src==='mp'?'':'<span class="badge">'+esc(d.c)+'</span>'}</div>
+      <p class="desc">${esc(d.t)}</p>
+      <div class="sub">Werkt in: ${esc(d.w)}${d.m?' · Maker: '+esc(d.m):''}</div>
+      ${r.why&&r.why.length?'<div class="why">Past bij: '+r.why.map(w=>'<span>'+esc(w)+'</span>').join('')+'</div>':''}
+      ${d.i?`<div class="cmd"><code>${esc(d.i)}</code><button class="copy" type="button">Kopieer</button></div>`:''}`;
+    const b = li.querySelector('.copy');
+    if(b) b.addEventListener('click',()=>{ const t=d.i;
+      (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent='Gekopieerd'; setTimeout(()=>b.textContent='Kopieer',1500)})
+      .catch(()=>{ const r=document.createRange(); r.selectNodeContents(li.querySelector('code')); const s=getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent='Geselecteerd'; }); });
+    ol.appendChild(li);
+  });
+}
+let last=[];
+function run(){
+  const q=$('#q').value.trim();
+  $('#advice').hidden=true;
+  if(!q){ last=[]; render(POPULAR.map(n=>DATA.find(d=>d.n===n)).filter(Boolean).map(d=>({d,s:0,why:null})),'Populair om mee te beginnen'); return; }
+  last=search(q); render(last,'Beste opties voor jou');
+}
+let t; $('#q').addEventListener('input',()=>{clearTimeout(t);t=setTimeout(run,180)});
+$('#mp').addEventListener('change',run);
+[['f-all','all'],['f-app','app'],['f-code','code']].forEach(([id,v])=>$('#'+id).addEventListener('click',()=>{
+  filter=v; document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.id===id))); run(); }));
+const EX=['Ik wil video’s maken voor Instagram','Mijn teksten klinken te veel als AI','Ik bouw een iPhone-app in SwiftUI','Een presentatie maken voor de vergadering','Facturen ordenen voor de belasting','Claude moet eerlijk tegenspreken','Website die er professioneel uitziet','Claude moet dingen onthouden'];
+EX.forEach(e=>{const c=document.createElement('button');c.type='button';c.className='chip';c.textContent=e;c.onclick=()=>{$('#q').value=e;run();};$('#chips').appendChild(c)});
+run();
+
+// Optioneel: echt advies van Claude (alleen als deze pagina als Claude-artifact draait)
+if(window.claude && window.claude.use){
+  window.claude.use('sample').then(sample=>{
+    if(!sample) return;
+    $('#ai').hidden=false;
+    $('#ask').addEventListener('click', async ()=>{
+      const q=$('#q').value.trim();
+      if(!q){ $('#q').focus(); return; }
+      const cands=(last.length?last:search(q)).slice(0,30).map(r=>({naam:r.d.n,wat:r.d.t,werkt_in:r.d.w,installeren:r.d.i,officieel:!!r.d.o}));
+      const where = filter==='app'?'de Claude-app':filter==='code'?'Claude Code':'nog onbekend';
+      const prompt=`Je bent de Skill-adviseur van een Nederlandstalige wiki over Claude-skills.\nVraag van de gebruiker: "${q}"\nDe gebruiker werkt in: ${where}.\nKandidaten (JSON): ${JSON.stringify(cands)}\n\nKies maximaal 3 kandidaten die het beste passen, de beste eerst. Verzin geen skills buiten de lijst. Geef de voorkeur aan wat werkt waar de gebruiker werkt, en aan officiële skills bij gelijke geschiktheid. Past niets goed, zeg dat dan en raad 'Skill Creator' aan.\nAntwoord als JSON: {"advies":"2-4 zinnen in het Nederlands, direct en concreet","keuzes":[{"naam":"exacte naam uit de lijst","waarom":"één zin"}]}`;
+      const b=$('#ask'); b.disabled=true; b.textContent='Claude denkt na…';
+      try{
+        const out=await sample.json(prompt,{modelTier:'quick'});
+        const picks=(out.keuzes||[]).map(k=>{const d=DATA.find(x=>x.n===k.naam);return d?{d,s:1,why:[k.waarom]}:null}).filter(Boolean);
+        $('#advice-text').textContent=out.advies||''; $('#advice').hidden=false;
+        if(picks.length){ const rest=(last||[]).filter(r=>!picks.some(p=>p.d===r.d)); render(picks.concat(rest),'Advies van Claude, daarna overige opties'); }
+      }catch(e){
+        $('#advice-text').textContent = e && e.code==='rate_limited' ? 'Even te veel vragen achter elkaar. Probeer het over een minuut opnieuw.' : 'Advies vragen lukte nu niet. De lijst hieronder is wel bijgewerkt.';
+        $('#advice').hidden=false;
+        if(e && e.code==='not_granted') $('#ai').hidden=true;
+      }finally{ b.disabled=false; b.textContent='Vraag Claude om persoonlijk advies'; }
+    });
+  });
+}
+})();
+</script>

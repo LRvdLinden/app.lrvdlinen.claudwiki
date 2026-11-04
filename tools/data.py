@@ -627,3 +627,8 @@ add(slug="template", name="Skill-template & specificatie", cat="bouwen", icon="f
     voorbeelden=[("Maak met het officiële template een skill 'wijkraad-notulen'.", "Een map met een geldige SKILL.md.")],
     install=tabs(tab("Starten", "Volg de stappen in [Je eigen skill maken](../../basis/eigen-skill-maken.md).")),
     tips=[])
+
+
+from data2 import NEWCATS, S2
+CATS += NEWCATS
+S += S2
