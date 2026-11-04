@@ -39,3 +39,19 @@ Deze repo is klaar voor **GitBook Git Sync**. `.gitbook.yaml` wijst naar `README
 | Achtergrond donker | `#0B0F1F` |
 
 Elke categorie heeft een eigen cover in `.gitbook/assets/cover-<categorie>.png` (1990×480) met een eigen accentkleur. Die worden automatisch gebruikt via de frontmatter van de pagina's.
+
+## 3. Skill-adviseur live zetten (GitHub Pages)
+
+De adviseur staat in `docs/index.html`. Zet GitHub Pages aan:
+
+1. Ga naar **Settings → Pages** van deze repo.
+2. Kies bij **Source**: *Deploy from a branch*, branch `main`, map `/docs`, en klik op **Save**.
+3. Na een minuut staat hij op `https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/`. De wikipagina *Skill-adviseur* verwijst daar al naar.
+
+Staat GitBook live? Bouw de adviseur dan opnieuw met de GitBook-URL, zodat de links naar de wikipagina's wijzen:
+
+```bash
+cd tools && WIKI_BASE=https://<jouw-site>.gitbook.io/claude-wiki python3 build_wiki.py ..
+```
+
+Zet in GitBook ook **AI-zoeken (GitBook Assistant)** aan, als je abonnement dat ondersteunt. Dan kunnen bezoekers in de zoekbalk ook een vraag stellen.
