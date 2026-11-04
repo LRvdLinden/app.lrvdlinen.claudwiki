@@ -32,6 +32,7 @@ Out of the box ziet wat Claude bouwt er vaak een beetje generiek uit. Deze skill
 <tr><td><strong>Canvas Design</strong></td><td>Maakt posters, kunst en statische ontwerpen als PNG of PDF, vanuit een eigen ontwerpfilosofie.</td><td><a href="canvas-design.md">canvas-design.md</a></td><td></td></tr>
 <tr><td><strong>Web Artifacts Builder</strong></td><td>Bouwt grote, complexe webartifacts met React, Tailwind CSS en shadcn/ui.</td><td><a href="web-artifacts-builder.md">web-artifacts-builder.md</a></td><td></td></tr>
 <tr><td><strong>Frontend Slides</strong></td><td>Prachtige, geanimeerde HTML-presentaties maken of PowerPoints omzetten naar het web.</td><td><a href="frontend-slides.md">frontend-slides.md</a></td><td></td></tr>
+<tr><td><strong>AnyDesign</strong></td><td>Analyseert een afbeelding, website of Figma-bestand en maakt er een gestructureerde design.md van.</td><td><a href="anydesign.md">anydesign.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -46,3 +47,4 @@ Out of the box ziet wat Claude bouwt er vaak een beetje generiek uit. Deze skill
 | [Canvas Design](canvas-design.md) | Claude-app, Claude Code, API | Anthropic (officieel) |
 | [Web Artifacts Builder](web-artifacts-builder.md) | Claude-app, Claude Code, API | Anthropic (officieel) |
 | [Frontend Slides](frontend-slides.md) | Claude Code (de SKILL.md werkt ook in andere agents) | Zara Zhang (community) |
+| [AnyDesign](anydesign.md) | Claude Code, Claude-app | uxKero (community) |

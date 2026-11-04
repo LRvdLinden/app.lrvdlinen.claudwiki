@@ -21,7 +21,7 @@ layout:
 ---
 # Alle skills
 
-Hier vind je 45 skills en skillpakketten, verdeeld over 10 categorieën. Elke pagina legt uit **wat** de skill doet, **wanneer** je hem gebruikt, geeft **voorbeelden** en laat zien **hoe je hem installeert**.
+Hier vind je 88 skills en skillpakketten, verdeeld over 14 categorieën. Elke pagina legt uit **wat** de skill doet, **wanneer** je hem gebruikt, geeft **voorbeelden** en laat zien **hoe je hem installeert**.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody>
 <tr><td><strong>Documenten & kantoor</strong></td><td>Skills die Claude echte kantoorbestanden laten maken en bewerken: Word, PDF, PowerPoint en Excel, plus hulp bij interne communicatie en samen schrijven.</td><td><a href="documenten/README.md">documenten/README.md</a></td><td><a href="../.gitbook/assets/cover-documenten.png">cover-documenten.png</a></td></tr>
@@ -34,6 +34,10 @@ Hier vind je 45 skills en skillpakketten, verdeeld over 10 categorieën. Elke pa
 <tr><td><strong>Zakelijk per rol</strong></td><td>Complete skillpakketten (plugins) per functie: sales, finance, legal, marketing, data, HR, operations, klantenservice en het mkb.</td><td><a href="zakelijk/README.md">zakelijk/README.md</a></td><td><a href="../.gitbook/assets/cover-zakelijk.png">cover-zakelijk.png</a></td></tr>
 <tr><td><strong>Security & wetenschap</strong></td><td>Professionele beveiligingsanalyse van code en een enorme bibliotheek met wetenschappelijke skills.</td><td><a href="security/README.md">security/README.md</a></td><td><a href="../.gitbook/assets/cover-security.png">cover-security.png</a></td></tr>
 <tr><td><strong>Zelf skills bouwen</strong></td><td>De skills waarmee je je eigen skills maakt, test en verbetert.</td><td><a href="bouwen/README.md">bouwen/README.md</a></td><td><a href="../.gitbook/assets/cover-bouwen.png">cover-bouwen.png</a></td></tr>
+<tr><td><strong>Apps & mobiel</strong></td><td>Skills voor iOS-, SwiftUI- en React Native/Expo-ontwikkelaars: van SwiftUI-best practices tot de iOS Simulator besturen.</td><td><a href="mobiel/README.md">mobiel/README.md</a></td><td><a href="../.gitbook/assets/cover-mobiel.png">cover-mobiel.png</a></td></tr>
+<tr><td><strong>Data, cloud & betalen</strong></td><td>Officiële skills van Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging Face, Stripe en Sentry.</td><td><a href="cloud/README.md">cloud/README.md</a></td><td><a href="../.gitbook/assets/cover-cloud.png">cover-cloud.png</a></td></tr>
+<tr><td><strong>Productiviteit & tools</strong></td><td>Handige alledaagse skills: bestanden en facturen ordenen, Google Workspace, NotebookLM, leren van artikelen en video's, en duizend apps koppelen.</td><td><a href="productiviteit/README.md">productiviteit/README.md</a></td><td><a href="../.gitbook/assets/cover-productiviteit.png">cover-productiviteit.png</a></td></tr>
+<tr><td><strong>Audio, beeld & visuals</strong></td><td>Spraak en muziek met ElevenLabs, afbeeldingen genereren en verbeteren, diagrammen en datavisualisaties.</td><td><a href="media/README.md">media/README.md</a></td><td><a href="../.gitbook/assets/cover-media.png">cover-media.png</a></td></tr>
 </tbody></table>
 
 {% hint style="info" %}

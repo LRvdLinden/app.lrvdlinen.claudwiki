@@ -32,6 +32,9 @@ Voor wie met Claude Code bouwt: engineering-workflows, code reviews, testen, MCP
 <tr><td><strong>Vercel Agent Skills</strong></td><td>React- en Next.js-best practices, webdesign-richtlijnen en deployen naar Vercel.</td><td><a href="vercel-agent-skills.md">vercel-agent-skills.md</a></td><td></td></tr>
 <tr><td><strong>n8n Skills</strong></td><td>Expertkennis om foutloze n8n-workflows te bouwen via de n8n-MCP-server.</td><td><a href="n8n-skills.md">n8n-skills.md</a></td><td></td></tr>
 <tr><td><strong>Terraform Skill</strong></td><td>Best practices voor Terraform en OpenTofu: modules, testen, CI/CD en productieklare infrastructuur.</td><td><a href="terraform-skill.md">terraform-skill.md</a></td><td></td></tr>
+<tr><td><strong>Playwright Skill</strong></td><td>Laat Claude zelf Playwright-scripts schrijven en draaien, van simpele paginatests tot lange flows.</td><td><a href="playwright-skill.md">playwright-skill.md</a></td><td></td></tr>
+<tr><td><strong>Context Engineering Kit</strong></td><td>Geavanceerde technieken: DDD, kaizen, subagent-driven development, critique en prompt engineering.</td><td><a href="context-engineering-kit.md">context-engineering-kit.md</a></td><td></td></tr>
+<tr><td><strong>Everything Claude Code (ECC)</strong></td><td>Een complete 'agent harness': agents, skills, commando's, hooks en regels in één groot pakket.</td><td><a href="everything-claude-code.md">everything-claude-code.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -46,3 +49,6 @@ Voor wie met Claude Code bouwt: engineering-workflows, code reviews, testen, MCP
 | [Vercel Agent Skills](vercel-agent-skills.md) | Claude Code (+ andere agents) | Vercel (officieel van de makers) |
 | [n8n Skills](n8n-skills.md) | Claude Code (met de n8n-mcp-server) | czlonkowski (community) |
 | [Terraform Skill](terraform-skill.md) | Claude Code (+ andere agents) | Anton Babenko (community) |
+| [Playwright Skill](playwright-skill.md) | Claude Code (+ Cursor en meer) | lackeyjb (community) |
+| [Context Engineering Kit](context-engineering-kit.md) | Claude Code (+ OpenCode, Cursor en meer) | NeoLab (community) |
+| [Everything Claude Code (ECC)](everything-claude-code.md) | Claude Code (+ andere agents) | affaan-m (community) |
