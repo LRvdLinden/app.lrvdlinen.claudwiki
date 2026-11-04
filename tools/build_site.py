@@ -154,6 +154,73 @@ def clip(s, n):
     cut = s[:n - 1].rsplit(" ", 1)[0].rstrip(",.;:")
     return cut + "…"
 
+
+# ───────── Terminal-animatie (Claude Code-stijl) ─────────
+def S(*steps): return list(steps)
+def U(x): return {"type": x, "pre": "> ", "cls": "t-user"}
+def C(x): return {"type": x, "pre": "$ ", "cls": "t-user"}
+def O(x, cls="", ms=260): return {"out": x, "cls": cls, "ms": ms}
+def SP(x, ms=1300): return {"spin": x, "ms": ms}
+TERM = {
+ "nl": {"title": "claude — ~/mijn-project",
+  "home": [
+   S(C("claude"), O("Claude Code · ~/mijn-project", "t-dim"), O(""),
+     U("/plugin install superpowers@claude-plugins-official"), SP("Plugin installeren…"),
+     O("✓ superpowers geïnstalleerd · 14 skills", "t-ok"), O("  brainstorming, writing-plans, test-driven-development, …", "t-dim")),
+   S(U("Maak een presentatie van kwartaalcijfers.xlsx"), SP("Nadenken…", 1100),
+     O("● Skill geladen: pptx", "t-acc"), O("● Read(kwartaalcijfers.xlsx)", "t-blue"), SP("Dia's bouwen…", 1500),
+     O("✓ presentatie.pptx gemaakt · 12 dia's met grafieken en notities", "t-ok")),
+   S(U("Mijn LinkedIn-post klinkt te veel als AI"), SP("Nadenken…", 1000),
+     O("● Skill geladen: humanizer", "t-acc"), SP("Herschrijven…", 1400),
+     O("✓ 9 AI-patronen weggehaald, de boodschap is hetzelfde gebleven", "t-ok")),
+   S(U("Welke skill heb ik nodig om video's te maken?"), SP("Zoeken in 403 skills…", 1300),
+     O("● Skill geladen: skill-adviseur", "t-acc"),
+     O("1. Remotion · video's en animaties in code", ""), O("   npx skills add remotion-dev/skills", "t-dim"),
+     O("2. Instagram Agent · Reels met scorende hooks", ""), O("✓ Beste keuze: Remotion", "t-ok"))],
+  "install": [
+   S(C("claude"), U("/plugin marketplace add anthropics/skills"), SP("Marketplace toevoegen…", 1100),
+     O("✓ Marketplace anthropic-agent-skills toegevoegd", "t-ok"),
+     U("/plugin install document-skills@anthropic-agent-skills"), SP("Installeren…", 1300),
+     O("✓ document-skills geïnstalleerd · docx, pdf, pptx, xlsx", "t-ok"),
+     U("Zet deze notulen om naar een Word-document"), O("● Skill geladen: docx", "t-acc"), SP("Schrijven…", 1200),
+     O("✓ notulen.docx gemaakt", "t-ok"))]},
+ "en": {"title": "claude — ~/my-project",
+  "home": [
+   S(C("claude"), O("Claude Code · ~/my-project", "t-dim"), O(""),
+     U("/plugin install superpowers@claude-plugins-official"), SP("Installing plugin…"),
+     O("✓ superpowers installed · 14 skills", "t-ok"), O("  brainstorming, writing-plans, test-driven-development, …", "t-dim")),
+   S(U("Make a presentation from quarterly-figures.xlsx"), SP("Thinking…", 1100),
+     O("● Skill loaded: pptx", "t-acc"), O("● Read(quarterly-figures.xlsx)", "t-blue"), SP("Building slides…", 1500),
+     O("✓ presentation.pptx created · 12 slides with charts and notes", "t-ok")),
+   S(U("My LinkedIn post sounds too much like AI"), SP("Thinking…", 1000),
+     O("● Skill loaded: humanizer", "t-acc"), SP("Rewriting…", 1400),
+     O("✓ Removed 9 AI patterns, the message stayed the same", "t-ok")),
+   S(U("Which skill do I need to make videos?"), SP("Searching 403 skills…", 1300),
+     O("● Skill loaded: skill-adviseur", "t-acc"),
+     O("1. Remotion · videos and animations in code", ""), O("   npx skills add remotion-dev/skills", "t-dim"),
+     O("2. Instagram Agent · Reels with scoring hooks", ""), O("✓ Best pick: Remotion", "t-ok"))],
+  "install": [
+   S(C("claude"), U("/plugin marketplace add anthropics/skills"), SP("Adding marketplace…", 1100),
+     O("✓ Marketplace anthropic-agent-skills added", "t-ok"),
+     U("/plugin install document-skills@anthropic-agent-skills"), SP("Installing…", 1300),
+     O("✓ document-skills installed · docx, pdf, pptx, xlsx", "t-ok"),
+     U("Turn these meeting notes into a Word document"), O("● Skill loaded: docx", "t-acc"), SP("Writing…", 1200),
+     O("✓ meeting-notes.docx created", "t-ok"))]},
+}
+def term_html(lang, key):
+    scenes = TERM[lang][key]
+    last = scenes[-1] if key == "install" else scenes[1]
+    static = ""
+    for st in last:
+        if "spin" in st: continue
+        txt = html.escape(st.get("type") or st.get("out") or "")
+        pre = f'<span class="t-acc">{html.escape(st["pre"])}</span>' if st.get("pre") else ""
+        static += f'<span class="term-line {st.get("cls", "")}">{pre}{txt}</span>'
+    lab = "Animatie: Claude Code met skills" if lang == "nl" else "Animation: Claude Code with skills"
+    return (f'<figure class="term" role="img" aria-label="{lab}" data-scenes="{html.escape(json.dumps(scenes, ensure_ascii=False))}">'
+            f'<div class="term-bar" aria-hidden="true"><i></i><i></i><i></i><span>{html.escape(TERM[lang]["title"])}</span></div>'
+            f'<div class="term-body" aria-hidden="true">{static}</div></figure>')
+
 CSS = open(os.path.join(HERE, "site.css"), encoding="utf-8").read()
 MARK = open(os.path.join(ROOT, ".gitbook/assets/mark.svg"), encoding="utf-8").read().replace('width="128" height="128"', 'width="34" height="34" aria-hidden="true"')
 
@@ -257,6 +324,10 @@ def build_lang(lang):
             return "<span></span>"
         lead = f'<p class="lead">{html.escape(meta["description"])}</p>' if meta.get("description") else ""
         if lead: h = re.sub(r"(</h1>)", lambda m: m.group(1) + lead, h, count=1)
+        if md_path == "README.md":
+            h = h.replace("<h2", term_html(lang, "home") + "<h2", 1)
+        elif md_path == "basis/skills-installeren.md":
+            h = h.replace("<div class=\"tabs\">", term_html(lang, "install") + "<div class=\"tabs\">", 1)
         other_href = ("../" * depth) + ("en/" if lang == "nl" else "../") + out_path(md_path)
         page = head(lang, full_title, desc, canon, alt_nl, alt_en, og_img, U["og_alt"].format(t=title), ld, asset_prefix, f"<style>{CSS}</style>") + f"""<body>
 <header class="top"><button class="menu" aria-label="{U['menu']}" aria-expanded="false">☰</button>
