@@ -1,0 +1,38 @@
+---
+description: >-
+  Laat Claude dingen onthouden tussen sessies, werk samen met je Obsidian-vault en laat Claude zelf nieuwe skills leren.
+icon: book-bookmark
+cover: ../../.gitbook/assets/cover-kennis.png
+coverY: 0
+layout:
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+---
+# Kennis & geheugen
+
+Laat Claude dingen onthouden tussen sessies, werk samen met je Obsidian-vault en laat Claude zelf nieuwe skills leren.
+
+<table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody>
+<tr><td><strong>Claude-Mem</strong></td><td>Geeft Claude Code een blijvend geheugen: wat in eerdere sessies gebeurde, komt automatisch terug.</td><td><a href="claude-mem.md">claude-mem.md</a></td><td></td></tr>
+<tr><td><strong>Claudeception</strong></td><td>Laat Claude Code zelf nieuwe skills schrijven van wat hij tijdens het werk ontdekt.</td><td><a href="claudeception.md">claudeception.md</a></td><td></td></tr>
+<tr><td><strong>Obsidian Skills</strong></td><td>Officiële skills van de Obsidian-maker: notities, Bases, JSON Canvas en de Obsidian CLI.</td><td><a href="obsidian-skills.md">obsidian-skills.md</a></td><td></td></tr>
+</tbody></table>
+
+## Snel overzicht
+
+| Skill | Werkt in | Maker |
+| --- | --- | --- |
+| [Claude-Mem](claude-mem.md) | Claude Code (+ andere agents) | thedotmack (community) |
+| [Claudeception](claudeception.md) | Claude Code | blader (community) |
+| [Obsidian Skills](obsidian-skills.md) | Claude Code (+ Codex, OpenCode) | Steph Ango / kepano (maker van Obsidian) |
