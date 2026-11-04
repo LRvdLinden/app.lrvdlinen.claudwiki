@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/sitemap.xml

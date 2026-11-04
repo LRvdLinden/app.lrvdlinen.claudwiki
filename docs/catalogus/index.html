@@ -1,11 +1,23 @@
 <!doctype html><html lang="nl"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Plugin-catalogus · Claude Wiki</title><meta name="description" content="Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.">
-<meta property="og:title" content="Plugin-catalogus · Claude Wiki"><meta property="og:description" content="Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.">
-<meta property="og:image" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/assets/cover-catalogus.png">
-<link rel="icon" href="../assets/mark.png">
+<title>Plugin-catalogus | Claude Wiki</title>
+<meta name="description" content="Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.">
+<link rel="canonical" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/">
+<link rel="alternate" hreflang="nl" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/"><link rel="alternate" hreflang="en" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/"><link rel="alternate" hreflang="x-default" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/">
+<meta name="theme-color" content="#FAF9F5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../favicon.ico" sizes="32x32"><link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png"><link rel="manifest" href="../site.webmanifest">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Claude Wiki">
+<meta property="og:title" content="Plugin-catalogus | Claude Wiki"><meta property="og:description" content="Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.">
+<meta property="og:url" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/"><meta property="og:locale" content="nl_NL"><meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-nl.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png"><meta property="og:image:alt" content="Claude Wiki – Plugin-catalogus">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Plugin-catalogus | Claude Wiki">
+<meta name="twitter:description" content="Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie."><meta name="twitter:image" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-nl.png"><meta name="twitter:image:alt" content="Claude Wiki – Plugin-catalogus">
+<script>(function(){var c=null;try{c=localStorage.getItem('cw-lang')}catch(e){}if(/bot|crawl|spider|slurp|preview|facebookexternalhit|linkedin|whatsapp|telegram|discord|lighthouse/i.test(navigator.userAgent))return;function nl(){var z='';try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}var l=((navigator.languages||[]).join(',')||navigator.language||'').toLowerCase();return z==='Europe/Amsterdam'||/(^|,)nl/.test(l)}if(c==='en'||(!c&&!nl()))location.replace('https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/'+location.search+location.hash)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/", "url": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/", "name": "Plugin-catalogus", "description": "Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.", "inLanguage": "nl", "isPartOf": {"@id": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/#website"}, "primaryImageOfPage": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-nl.png", "dateModified": "2026-11-04"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/"}, {"@type": "ListItem", "position": 2, "name": "Plugin-catalogus", "item": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/"}]}]}</script>
 <style>/* Claude Wiki – Claude-geïnspireerd palet (crème, antraciet, terracotta), Poppins + Lora. Eigen logo. */
 :root{
   --bg:#FAF9F5; --panel:#F3F1EA; --surface:#FFFFFF; --line:#E8E6DC; --fg:#141413; --muted:#5E5D59;
@@ -38,6 +50,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .sres a:hover,.sres a.sel{background:var(--panel)}
 .sres strong{font:600 14px var(--display);display:block}
 .sres span{font-size:13px;color:var(--muted)}
+.lang{flex:none;font:600 13px var(--display);text-decoration:none;color:var(--fg);border:1px solid var(--line);background:var(--surface);padding:8px 11px;border-radius:10px}
+.lang:hover{border-color:var(--accent)}
 .adv{flex:none;font:600 14px var(--display);text-decoration:none;background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px}
 
 /* layout */
@@ -119,6 +133,7 @@ footer{max-width:780px;margin:40px auto 0;padding-top:18px;border-top:1px solid 
   body.nav-open .side{transform:none}
   .brand small{display:none}
   .adv{display:none}
+  .lang span{display:none}
   .search{max-width:none}
 }
 @media (max-width:520px){.brand span{display:none}.pager{grid-template-columns:1fr}.pager a:last-child{text-align:left}}
@@ -134,6 +149,7 @@ footer{max-width:780px;margin:40px auto 0;padding-top:18px;border-top:1px solid 
 </svg>
 <span>Claude Wiki<small>onofficiële NL-gids</small></span></a>
 <form class="search" role="search"><input id="s" type="search" placeholder="Zoek in de wiki…" autocomplete="off" aria-label="Zoeken"><div class="sres" hidden></div></form>
+<a class="lang" href="../en/catalogus/index.html" hreflang="en" lang="en" data-lang="en">EN<span> · English</span></a>
 <a class="adv" href="../adviseur/">Skill-adviseur</a></header>
 <div class="layout"><nav class="side" aria-label="Navigatie"><a href="../index.html">Welkom</a>
 <a href="../adviseur/">Skill-adviseur</a>
@@ -178,11 +194,11 @@ footer{max-width:780px;margin:40px auto 0;padding-top:18px;border-top:1px solid 
 <a href="../bronnen/index.html">Bronnen &amp; marketplaces</a>
 <a href="../bronnen/faq.html">Veelgestelde vragen</a>
 <a href="../bronnen/over.html">Over deze wiki</a></nav>
-<main><img class="cover" src="../assets/cover-catalogus.png" alt=""><article><h1>Plugin-catalogus</h1><p class="lead">Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.</p>
+<main><img class="cover" src="../assets/cover-catalogus.png" alt="" width="1990" height="480" fetchpriority="high"><article><h1>Plugin-catalogus</h1><p class="lead">Alle 315 plugins uit de officiële Claude Code-marketplace, per categorie.</p>
 <p>De officiële marketplace van Anthropic (<code>claude-plugins-official</code>) telt op dit moment <strong>315 plugins</strong>: van Anthropic zelf en van bedrijven als Google, AWS, Microsoft, Stripe, Figma, Notion, Canva, Shopify en Supabase. Deze marketplace is in Claude Code standaard al gekoppeld.</p>
 <aside class="hint info"><span class="hint-i" aria-hidden="true">i</span><div><p><strong>Installeren:</strong> typ in Claude Code <code>/plugin install &lt;naam&gt;@claude-plugins-official</code>, of blader via <code>/plugin</code> → <strong>Discover</strong>. Plugins van derden bevatten soms MCP-servers of software die Anthropic niet beheert: installeer alleen wat je vertrouwt.</p></div></aside>
 <div class="cards"><a class="card" href="development.html"><strong>Ontwikkeling</strong><span>123 plugins</span></a><a class="card" href="productivity.html"><strong>Productiviteit</strong><span>69 plugins</span></a><a class="card" href="database.html"><strong>Databases</strong><span>39 plugins</span></a><a class="card" href="monitoring.html"><strong>Monitoring & observability</strong><span>22 plugins</span></a><a class="card" href="security.html"><strong>Security</strong><span>18 plugins</span></a><a class="card" href="overig.html"><strong>Overig</strong><span>14 plugins</span></a><a class="card" href="deployment.html"><strong>Deployen & hosting</strong><span>9 plugins</span></a><a class="card" href="design.html"><strong>Design</strong><span>8 plugins</span></a><a class="card" href="automation.html"><strong>Automatisering</strong><span>3 plugins</span></a><a class="card" href="learning.html"><strong>Leren & uitlegstijl</strong><span>3 plugins</span></a><a class="card" href="location.html"><strong>Locatie & kaarten</strong><span>2 plugins</span></a><a class="card" href="testing.html"><strong>Testen</strong><span>2 plugins</span></a><a class="card" href="math.html"><strong>Wiskunde</strong><span>2 plugins</span></a><a class="card" href="migration.html"><strong>Migratie</strong><span>1 plugins</span></a></div>
 <aside class="hint success"><span class="hint-i" aria-hidden="true">✓</span><div><p>Weet je niet welke je nodig hebt? Gebruik de <a href="../adviseur/index.html">Skill-adviseur</a>: beschrijf wat je wilt en je krijgt de beste opties.</p></div></aside>
 <p><em>Gegenereerd uit <a href="https://github.com/anthropics/claude-plugins-official/blob/main/.claude-plugin/marketplace.json">marketplace.json</a>, november 2026. De beschrijvingen zijn van de makers zelf (Engels).</em></p></article><nav class="pager"><a href="../skills/media/stitch.html"><small>Vorige</small>Google Stitch Skills</a><a href="../catalogus/development.html"><small>Volgende</small>Ontwikkeling (123)</a></nav>
 <footer>Onofficiële wiki door LRvdLinden · Claude is een product van Anthropic · <a href="https://github.com/LRvdLinden/app.lrvdlinen.claudwiki">Bron op GitHub</a></footer></main></div>
-<script>window.PREFIX="../";</script><script src="../site.js" defer></script></body></html>
+<script>window.PREFIX="../";window.UI={"ask": "Vraag de Skill-adviseur →", "asksub": "Beschrijf wat je wilt en krijg de beste skill"};</script><script src="../site.js" defer></script></body></html>

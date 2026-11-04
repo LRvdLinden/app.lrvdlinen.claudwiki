@@ -8,6 +8,10 @@
       });
     });
   });
+  // taalkeuze onthouden
+  document.querySelectorAll('a.lang').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('cw-lang', a.getAttribute('data-lang')); } catch (e) {} });
+  });
   // menu
   var menu = document.querySelector('.menu');
   if (menu) menu.addEventListener('click', function () {
@@ -36,7 +40,7 @@
         return { e: e, s: s };
       }).filter(function (r) { return r.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8);
       var html = res.map(function (r) { return '<a href="' + window.PREFIX + r.e.p.u + '"><strong>' + esc(r.e.p.t) + '</strong><span>' + esc(r.e.p.d) + '</span></a>'; }).join('');
-      html += '<a href="' + window.PREFIX + 'adviseur/?q=' + encodeURIComponent(input.value.trim()) + '"><strong>Vraag de Skill-adviseur →</strong><span>Beschrijf wat je wilt en krijg de beste skill</span></a>';
+      html += '<a href="' + window.PREFIX + 'adviseur/?q=' + encodeURIComponent(input.value.trim()) + '"><strong>' + esc(window.UI.ask) + '</strong><span>' + esc(window.UI.asksub) + '</span></a>';
       box.innerHTML = html; box.hidden = false; sel = -1;
     });
   }

@@ -1,6 +1,6 @@
 ---
 description: >-
-  Veelgestelde vragen over Claude-skills.
+  Veelgestelde vragen over Claude-skills: wat ze kosten, installeren, de Claude-app tegenover Claude Code en delen met je team.
 icon: circle-question
 cover: ../.gitbook/assets/cover-bronnen.png
 coverY: 0
