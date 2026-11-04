@@ -691,7 +691,8 @@ for p in M:
                 "w": "Claude Code", "m": a, "p": f"catalogus/{catslug(p.get('category'))}", "h": p.get("homepage", ""),
                 "i": f"/plugin install {p['name']}@claude-plugins-official", "k": "", "o": 1 if a == "Anthropic" else 0, "src": "mp"})
 os.makedirs(os.path.join(ROOT, "docs"), exist_ok=True)
-json.dump(ADV, open(os.path.join(ROOT, "docs", "skills.json"), "w"), ensure_ascii=False)
+os.makedirs(os.path.join(ROOT, "docs", "adviseur"), exist_ok=True)
+json.dump(ADV, open(os.path.join(ROOT, "docs", "adviseur", "skills.json"), "w"), ensure_ascii=False)
 
 # ═════════ Installeerbare zoek-skill ═════════
 lines = ["# Catalogus", "", "Formaat: naam | categorie | werkt in | wat het doet | installeren | wikipagina", ""]
@@ -733,7 +734,7 @@ with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
             z.write(full, os.path.relpath(full, os.path.join(ROOT, "skill-adviseur")))
 
 # ═════════ Adviseur-pagina in de wiki ═════════
-ADV_URL = "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/"
+ADV_URL = "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/adviseur/"
 w("adviseur/README.md", fm("wand-magic-sparkles", "Vertel wat je wilt doen en krijg direct de best passende skill, met installatiecommando.", "adviseur", 1) + f"""# Skill-adviseur
 
 Weet je niet welke skill je nodig hebt? Beschrijf in gewone taal wat je wilt doen, en de adviseur zoekt in **{len(ADV)} skills en plugins** de beste opties voor je, met uitleg en installatiecommando.
@@ -807,13 +808,13 @@ print("catalogus", len(M), "adviseur", len(ADV))
 # ═════════ Adviseur-HTML (GitHub Pages + artifact) ═════════
 tpl = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "adviseur_template.html")).read()
 data = json.dumps(ADV, ensure_ascii=False).replace("</", "<\\/")
-body = tpl.replace("__DATA__", data).replace("__WIKI_BASE__", os.environ.get("WIKI_BASE", ""))
+SITE = "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/"
+def adv_html(base, home):
+    return tpl.replace("__DATA__", data).replace("__WIKI_BASE__", base).replace("__HOME__", home)
 full = ('<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         '<meta name="description" content="Vertel wat je wilt doen en krijg de best passende Claude-skill, met installatiecommando.">'
-        '<link rel="icon" href="mark.png"><style>[hidden]{display:none!important}</style></head><body>' + body + '</body></html>')
-w("docs/index.html", full)
-w("docs/.nojekyll", "")
-shutil.copy(os.path.join(ROOT, ".gitbook/assets/mark.png"), os.path.join(ROOT, "docs/mark.png"))
+        '<link rel="icon" href="../assets/mark.png"><style>[hidden]{display:none!important}</style></head><body>' + adv_html("../", "../index.html") + '</body></html>')
+w("docs/adviseur/index.html", full)
 art = os.environ.get("ARTIFACT_OUT")
 if art:
-    open(art, "w").write('<html lang="nl">' if False else body)
+    open(art, "w").write(adv_html(SITE, SITE))

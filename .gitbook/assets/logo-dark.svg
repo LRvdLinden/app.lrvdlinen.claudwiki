@@ -1,16 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 128" width="560" height="128">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 128" width="600" height="128">
 <g>
-  <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#A855F7"/>
-    </linearGradient>
-  </defs>
-  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#g)"/>
-  <path d="M26 42c12-5 25-4 38 4v50c-13-8-26-9-38-4z" fill="#fff"/>
-  <path d="M102 42c-12-5-25-4-38 4v50c13-8 26-9 38-4z" fill="#fff" fill-opacity=".78"/>
-  <path d="M34 56h20M34 66h20M34 76h14" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/>
-  <path d="M97 14l4.5 10.5L112 29l-10.5 4.5L97 44l-4.5-10.5L82 29l10.5-4.5z" fill="#FBBF24" stroke="#fff" stroke-width="3" stroke-linejoin="round"/>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="#D97757"/>
+  <path d="M24 40c13-5 27-4 40 4v54c-13-8-27-9-40-4z" fill="#FAF9F5"/>
+  <path d="M104 40c-13-5-27-4-40 4v54c13-8 27-9 40-4z" fill="#F0EEE6"/>
+  <path d="M32 56h22M32 66h22M32 76h15" stroke="#D97757" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M80 30v30l7-5 7 5V30z" fill="#141413"/>
 </g>
-<text x="150" y="72" font-family="Inter Display, Inter, Arial, sans-serif" font-weight="800" font-size="56" fill="#FFFFFF" letter-spacing="-1.5">Claude Wiki</text>
-<text x="152" y="106" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="22" fill="#C4B5FD" letter-spacing="3">SKILLS · UITLEG · NL</text>
+<text x="150" y="74" font-family="Poppins, Arial, sans-serif" font-weight="600" font-size="54" fill="#FAF9F5" letter-spacing="-1">Claude Wiki</text>
+<text x="152" y="108" font-family="Lora, Georgia, serif" font-style="italic" font-size="22" fill="#E89A80">onofficiële Nederlandse gids</text>
 </svg>

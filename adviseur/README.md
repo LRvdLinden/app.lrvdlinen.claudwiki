@@ -23,9 +23,9 @@ layout:
 
 Weet je niet welke skill je nodig hebt? Beschrijf in gewone taal wat je wilt doen, en de adviseur zoekt in **403 skills en plugins** de beste opties voor je, met uitleg en installatiecommando.
 
-<a href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/" class="button primary" data-icon="magnifying-glass">Open de Skill-adviseur</a>
+<a href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/adviseur/" class="button primary" data-icon="magnifying-glass">Open de Skill-adviseur</a>
 
-{% embed url="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/" %}
+{% embed url="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/adviseur/" %}
 Skill-adviseur: zoek de beste skill voor jouw taak
 {% endembed %}
 
@@ -33,7 +33,7 @@ Skill-adviseur: zoek de beste skill voor jouw taak
 
 {% tabs %}
 {% tab title="In je browser" %}
-Open de [Skill-adviseur](https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/) en typ wat je wilt, bijvoorbeeld:
+Open de [Skill-adviseur](https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/adviseur/) en typ wat je wilt, bijvoorbeeld:
 
 * *"Ik wil video's maken voor Instagram"*
 * *"Mijn teksten klinken te veel als AI"*

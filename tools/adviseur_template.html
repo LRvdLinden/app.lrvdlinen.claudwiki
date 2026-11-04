@@ -1,35 +1,35 @@
 <title>Skill-adviseur</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-/* Layout: één kolom, zoekpaneel bovenaan als 'console', resultaten als gerangschikte lijst. Huisstijl Claude Wiki. */
+/* Layout: één kolom, zoekpaneel bovenaan, resultaten als gerangschikte lijst. Claude-geïnspireerd palet, eigen logo. */
 :root{
-  --bg:#F6F6FB; --surface:#FFFFFF; --surface-2:#EEF0FA; --line:#DADDF0;
-  --fg:#12142B; --muted:#5A5F80; --accent:#5457E6; --accent-2:#9A4BEA; --spark:#E0A100;
-  --ok:#0F8A5F; --code-bg:#F0F1FA;
-  --display:"Inter Tight","Inter",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --bg:#FAF9F5; --surface:#FFFFFF; --surface-2:#F0EEE6; --line:#E8E6DC;
+  --fg:#141413; --muted:#5E5D59; --accent:#C6613F; --accent-2:#D97757; --spark:#D97757;
+  --ok:#5E7A45; --code-bg:#F5F4EE;
+  --display:"Poppins",Arial,sans-serif; --body:"Lora",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0B0F1F; --surface:#121833; --surface-2:#1A2145; --line:#283062;
-  --fg:#EEF0FF; --muted:#A3A9D1; --accent:#8B8EFF; --accent-2:#C084FC; --spark:#FBBF24; --ok:#34D399; --code-bg:#0E1330; color-scheme:dark}}
+  --bg:#141413; --surface:#1F1E1D; --surface-2:#2A2927; --line:#3A3936;
+  --fg:#FAF9F5; --muted:#B0AEA5; --accent:#E08A6D; --accent-2:#D97757; --spark:#D97757; --ok:#9BB07F; --code-bg:#1A1918; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0B0F1F; --surface:#121833; --surface-2:#1A2145; --line:#283062;
-  --fg:#EEF0FF; --muted:#A3A9D1; --accent:#8B8EFF; --accent-2:#C084FC; --spark:#FBBF24; --ok:#34D399; --code-bg:#0E1330; color-scheme:dark}
+  --bg:#141413; --surface:#1F1E1D; --surface-2:#2A2927; --line:#3A3936;
+  --fg:#FAF9F5; --muted:#B0AEA5; --accent:#E08A6D; --accent-2:#D97757; --spark:#D97757; --ok:#9BB07F; --code-bg:#1A1918; color-scheme:dark}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15px;line-height:1.55;margin:0}
 .wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:flex;flex-direction:column;gap:22px}
 header{display:flex;align-items:center;gap:14px}
 header svg{flex:none}
-.eyebrow{font:600 11px/1 var(--body);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
-h1{font:800 clamp(28px,5vw,40px)/1.05 var(--display);letter-spacing:-.02em;margin:4px 0 0;text-wrap:balance}
+.eyebrow{font:500 11px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+h1{font:700 clamp(28px,5vw,40px)/1.05 var(--display);letter-spacing:-.02em;margin:4px 0 0;text-wrap:balance}
 .lede{color:var(--muted);margin:0;max-width:62ch}
 .console{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;display:flex;flex-direction:column;gap:12px}
-label.q{font:600 13px var(--body);color:var(--muted)}
+label.q{font:500 13px var(--display);color:var(--muted)}
 textarea{width:100%;min-height:84px;resize:vertical;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:12px;padding:12px 14px;font:500 17px/1.4 var(--body)}
 textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:999px;padding:6px 12px;font:500 13px var(--body);cursor:pointer}
+.chip{font-family:var(--display)!important;border:1px solid var(--line);background:var(--surface-2);color:var(--fg);border-radius:999px;padding:6px 12px;font:500 13px var(--body);cursor:pointer}
 .chip:hover{border-color:var(--accent)}
 .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -37,7 +37,7 @@ textarea:focus-visible,button:focus-visible,a:focus-visible{outline:2px solid va
 .seg button[aria-pressed="true"]{background:var(--accent);color:#fff}
 .toggle{display:flex;gap:8px;align-items:center;font:500 13px var(--body);color:var(--muted)}
 .ai{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.btn{border:0;border-radius:10px;padding:10px 14px;font:600 14px var(--body);cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff}
+.btn{border:0;border-radius:10px;padding:10px 14px;font:600 14px var(--body);cursor:pointer;background:var(--accent);color:#fff}
 .btn[disabled]{opacity:.6;cursor:progress}
 .note{font-size:12.5px;color:var(--muted)}
 .advice{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
@@ -56,7 +56,7 @@ ol.results{list-style:none;margin:0;padding:0;display:flex;flex-direction:column
 .title a,.title strong{font:700 16px var(--display);color:var(--fg);text-decoration:none}
 .title a:hover{text-decoration:underline}
 .badge{font:600 11px var(--body);letter-spacing:.04em;border-radius:6px;padding:2px 7px;background:var(--surface-2);color:var(--muted)}
-.badge.best{background:var(--spark);color:#1a1300}
+.badge.best{background:var(--spark);color:#fff}
 .badge.off{color:var(--ok)}
 .desc{margin:0;color:var(--fg);min-width:0}
 .sub{font-size:12.5px;color:var(--muted);min-width:0}
@@ -73,8 +73,8 @@ footer a{color:var(--accent)}
 
 <div class="wrap">
   <header>
-    <svg width="48" height="48" viewBox="0 0 128 128" aria-hidden="true"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs><rect x="4" y="4" width="120" height="120" rx="30" fill="url(#g)"/><path d="M26 42c12-5 25-4 38 4v50c-13-8-26-9-38-4z" fill="#fff"/><path d="M102 42c-12-5-25-4-38 4v50c13-8 26-9 38-4z" fill="#fff" fill-opacity=".78"/><path d="M34 56h20M34 66h20M34 76h14" stroke="#6366F1" stroke-width="4" stroke-linecap="round"/><path d="M97 14l4.5 10.5L112 29l-10.5 4.5L97 44l-4.5-10.5L82 29l10.5-4.5z" fill="#FBBF24" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg>
-    <div><div class="eyebrow">Claude Wiki</div><h1>Skill-adviseur</h1></div>
+    <svg viewBox="0 0 128 128" width="48" height="48" aria-hidden="true">  <rect x="4" y="4" width="120" height="120" rx="30" fill="#D97757"/>  <path d="M24 40c13-5 27-4 40 4v54c-13-8-27-9-40-4z" fill="#FAF9F5"/>  <path d="M104 40c-13-5-27-4-40 4v54c13-8 27-9 40-4z" fill="#F0EEE6"/>  <path d="M32 56h22M32 66h22M32 76h15" stroke="#D97757" stroke-width="4.5" stroke-linecap="round"/>  <path d="M80 30v30l7-5 7 5V30z" fill="#141413"/></svg>
+    <div><div class="eyebrow">Claude Wiki · onofficiële gids</div><h1>Skill-adviseur</h1></div>
   </header>
   <p class="lede">Vertel in gewone taal wat je wilt doen. De adviseur zoekt in <strong id="total">alle</strong> skills en plugins de beste opties, met waar ze werken en hoe je ze installeert.</p>
 
@@ -96,7 +96,7 @@ footer a{color:var(--accent)}
     </div>
   </section>
 
-  <section class="advice" id="advice" hidden aria-live="polite"><h2>✦ Advies van Claude</h2><p id="advice-text"></p></section>
+  <section class="advice" id="advice" hidden aria-live="polite"><h2>Advies van Claude</h2><p id="advice-text"></p></section>
 
   <section aria-live="polite">
     <div class="meta"><h2 id="rh">Populair om mee te beginnen</h2><span class="count" id="count"></span></div>
@@ -105,7 +105,7 @@ footer a{color:var(--accent)}
 
   <footer>
     <span>Onofficiële wiki door LRvdLinden · Claude is een product van Anthropic</span>
-    <a href="https://github.com/LRvdLinden/app.lrvdlinen.claudwiki" target="_blank" rel="noopener">Bron op GitHub</a>
+    <a href="__HOME__">Naar de wiki</a> <a href="https://github.com/LRvdLinden/app.lrvdlinen.claudwiki" target="_blank" rel="noopener">Bron op GitHub</a>
   </footer>
 </div>
 
@@ -211,7 +211,7 @@ function search(q){
 }
 const POPULAR = ['Skill Creator','Superpowers','UI UX Pro Max','Humanizer','Remotion','Word (docx)','PowerPoint (pptx)','Grill Me & Handoff'];
 function link(d){
-  if(WIKI_BASE) return WIKI_BASE.replace(/\/$/,'')+'/'+d.p.replace(/\/README$/,'');
+  if(WIKI_BASE) return WIKI_BASE + d.p.replace(/README$/,'index') + '.html';
   return GH+d.p+'.md';
 }
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -252,6 +252,7 @@ $('#mp').addEventListener('change',run);
   filter=v; document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',String(b.id===id))); run(); }));
 const EX=['Ik wil video’s maken voor Instagram','Mijn teksten klinken te veel als AI','Ik bouw een iPhone-app in SwiftUI','Een presentatie maken voor de vergadering','Facturen ordenen voor de belasting','Claude moet eerlijk tegenspreken','Website die er professioneel uitziet','Claude moet dingen onthouden'];
 EX.forEach(e=>{const c=document.createElement('button');c.type='button';c.className='chip';c.textContent=e;c.onclick=()=>{$('#q').value=e;run();};$('#chips').appendChild(c)});
+try{const q0=new URLSearchParams(location.search).get('q'); if(q0) $('#q').value=q0;}catch(e){}
 run();
 
 // Optioneel: echt advies van Claude (alleen als deze pagina als Claude-artifact draait)

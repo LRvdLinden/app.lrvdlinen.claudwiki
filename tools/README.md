@@ -1,9 +1,8 @@
 # Generator
 
-De skillpagina's, categoriepagina's en `SUMMARY.md` worden gegenereerd uit `data.py`.
-
 ```bash
-cd tools && python3 build_wiki.py ..
+python3 tools/build_wiki.py .   # markdown-pagina's, catalogus, adviseur-data, SUMMARY.md
+python3 tools/build_site.py     # website in docs/ (GitHub Pages)
 ```
 
-Nieuwe skill? Voeg een `add(...)`-blok toe in `data.py` en draai het script opnieuw.
+Nieuwe skill? Voeg een `add(...)`-blok toe in `data.py` of `data2.py` en draai beide scripts.
