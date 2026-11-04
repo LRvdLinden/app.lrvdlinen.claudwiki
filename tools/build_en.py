@@ -46,8 +46,8 @@ def tr(s):
     x = E[s["slug"]]
     return dict(slug=s["slug"], cat=s["cat"], icon=s["icon"], name=x.get("name", s["name"]), tagline=x["t"], wat=x["w"],
                 wanneer=x["wa"], voorbeelden=x["v"], tips=x.get("tips", []), social=x.get("soc"),
-                maker=i18n.maker(s["maker"]), werkt=i18n.werkt(s["werkt"]), prijs=i18n.prijs(s["prijs"]),
-                bron=s["bron"], install=i18n.install(s["install"]), official="Anthropic" in s["maker"])
+                maker=x.get("maker", i18n.maker(s["maker"])), werkt=x.get("werkt", i18n.werkt(s["werkt"])), prijs=x.get("prijs", i18n.prijs(s["prijs"])),
+                bron=s["bron"], install=x.get("install") or i18n.install(s["install"]), official="Anthropic" in s["maker"])
 SE = [tr(s) for s in S]
 
 # ───────── skill pages ─────────

@@ -34,6 +34,17 @@ Official skills from Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging 
 <tr><td><strong>Stripe</strong></td><td>Official Stripe skills and best practices for payments, Connect and API upgrades.</td><td><a href="stripe.md">stripe.md</a></td><td></td></tr>
 <tr><td><strong>Sentry Skills</strong></td><td>The skills Sentry uses internally: finding bugs, code reviews, commits, PRs and security reviews.</td><td><a href="sentry.md">sentry.md</a></td><td></td></tr>
 <tr><td><strong>Firecrawl</strong></td><td>Searching and reading the web for your agent: search, scrape pages, leads, SEO audits and deep research.</td><td><a href="firecrawl.md">firecrawl.md</a></td><td></td></tr>
+<tr><td><strong>Firebase</strong></td><td>Manage Firestore, Authentication, Cloud Functions, Hosting and Storage from Claude.</td><td><a href="firebase.md">firebase.md</a></td><td></td></tr>
+<tr><td><strong>MongoDB</strong></td><td>Official MongoDB plugin: connect, explore data, optimise queries and generate reliable code.</td><td><a href="mongodb.md">mongodb.md</a></td><td></td></tr>
+<tr><td><strong>Prisma</strong></td><td>Manage Postgres databases with Prisma: schema migrations, SQL queries and provisioning Prisma Postgres.</td><td><a href="prisma.md">prisma.md</a></td><td></td></tr>
+<tr><td><strong>Vercel (deployen)</strong></td><td>Manage deployments, check build status and logs and configure domains on Vercel.</td><td><a href="vercel-deploy.md">vercel-deploy.md</a></td><td></td></tr>
+<tr><td><strong>Netlify</strong></td><td>Netlify skills: functions, edge functions, blobs, database, forms, caching and deployment.</td><td><a href="netlify.md">netlify.md</a></td><td></td></tr>
+<tr><td><strong>Resend</strong></td><td>Send and receive email with Resend: API, agent inbox, React Email and good deliverability.</td><td><a href="resend.md">resend.md</a></td><td></td></tr>
+<tr><td><strong>Twilio</strong></td><td>Knowledge for SMS, voice, WhatsApp, Verify, SendGrid and 30+ other Twilio products.</td><td><a href="twilio.md">twilio.md</a></td><td></td></tr>
+<tr><td><strong>PostHog</strong></td><td>PostHog analytics, feature flags, experiments and error tracking from Claude.</td><td><a href="posthog.md">posthog.md</a></td><td></td></tr>
+<tr><td><strong>Shopify AI Toolkit</strong></td><td>18 skills for building on Shopify: documentation, API schemas, GraphQL/Liquid validation, Hydrogen and Polaris.</td><td><a href="shopify.md">shopify.md</a></td><td></td></tr>
+<tr><td><strong>Wix</strong></td><td>Build, manage and publish Wix sites and apps, with the Wix Design System and an MCP server.</td><td><a href="wix.md">wix.md</a></td><td></td></tr>
+<tr><td><strong>Build with WordPress</strong></td><td>Production-grade WordPress sites and apps: themes, plugins, commerce and deployment.</td><td><a href="wordpress.md">wordpress.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Quick overview
@@ -50,3 +61,14 @@ Official skills from Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging 
 | [Stripe](stripe.md) | Claude Code (+ other agents) | Stripe (official, by the makers) |
 | [Sentry Skills](sentry.md) | Claude Code | Sentry (official, by the makers) |
 | [Firecrawl](firecrawl.md) | Claude Code (API key required) | Firecrawl (official, by the makers) |
+| [Firebase](firebase.md) | Claude Code | Google · official Claude marketplace |
+| [MongoDB](mongodb.md) | Claude Code | MongoDB · official Claude marketplace |
+| [Prisma](prisma.md) | Claude Code | Prisma · official Claude marketplace |
+| [Vercel (deployen)](vercel-deploy.md) | Claude Code | Vercel · official Claude marketplace |
+| [Netlify](netlify.md) | Claude Code | Netlify · official Claude marketplace |
+| [Resend](resend.md) | Claude Code | Resend · official Claude marketplace |
+| [Twilio](twilio.md) | Claude Code | Twilio · official Claude marketplace |
+| [PostHog](posthog.md) | Claude Code | PostHog · official Claude marketplace |
+| [Shopify AI Toolkit](shopify.md) | Claude Code | Shopify · official Claude marketplace |
+| [Wix](wix.md) | Claude Code | Wix · official Claude marketplace |
+| [Build with WordPress](wordpress.md) | Claude Code | WordPress · official Claude marketplace |

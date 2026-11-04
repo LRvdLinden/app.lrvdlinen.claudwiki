@@ -15,6 +15,7 @@ CATS_EN = {
     "mobiel": ("Apps & mobile", "Skills for iOS, SwiftUI and React Native/Expo developers: from SwiftUI best practices to driving the iOS Simulator."),
     "cloud": ("Data, cloud & payments", "Official skills from Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging Face, Stripe and Sentry."),
     "productiviteit": ("Productivity & tools", "Handy everyday skills: organising files and invoices, Google Workspace, NotebookLM, learning from articles and videos, and connecting a thousand apps."),
+    "koppelingen": ("Connect your apps", "Plugins that connect Claude to the apps you already use: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier and more. Claude can then look things up and take actions in them."),
     "media": ("Audio, images & visuals", "Speech and music with ElevenLabs, generating and enhancing images, diagrams and data visualisations."),
 }
 

@@ -34,6 +34,17 @@ Officiële skills van Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging
 <tr><td><strong>Stripe</strong></td><td>Officiële Stripe-skills en best practices voor betalingen, Connect en upgrades van de API.</td><td><a href="stripe.md">stripe.md</a></td><td></td></tr>
 <tr><td><strong>Sentry Skills</strong></td><td>De skills die Sentry intern gebruikt: bugs vinden, code reviews, commits, PR's en security reviews.</td><td><a href="sentry.md">sentry.md</a></td><td></td></tr>
 <tr><td><strong>Firecrawl</strong></td><td>Het web doorzoeken en lezen voor je agent: zoeken, pagina's scrapen, leads, SEO-audits en diepgaand onderzoek.</td><td><a href="firecrawl.md">firecrawl.md</a></td><td></td></tr>
+<tr><td><strong>Firebase</strong></td><td>Beheer Firestore, Authentication, Cloud Functions, Hosting en Storage vanuit Claude.</td><td><a href="firebase.md">firebase.md</a></td><td></td></tr>
+<tr><td><strong>MongoDB</strong></td><td>Officiële MongoDB-plugin: verbinden, data verkennen, query's optimaliseren en betrouwbare code genereren.</td><td><a href="mongodb.md">mongodb.md</a></td><td></td></tr>
+<tr><td><strong>Prisma</strong></td><td>Postgres-databases beheren met Prisma: schema-migraties, SQL-query's en Prisma Postgres aanmaken.</td><td><a href="prisma.md">prisma.md</a></td><td></td></tr>
+<tr><td><strong>Vercel (deployen)</strong></td><td>Deployments beheren, buildstatus en logs bekijken en domeinen instellen op Vercel.</td><td><a href="vercel-deploy.md">vercel-deploy.md</a></td><td></td></tr>
+<tr><td><strong>Netlify</strong></td><td>Netlify-skills: functions, edge functions, blobs, database, formulieren, caching en deployen.</td><td><a href="netlify.md">netlify.md</a></td><td></td></tr>
+<tr><td><strong>Resend</strong></td><td>E-mail versturen en ontvangen met Resend: API, agent-inbox, React Email en goede bezorgbaarheid.</td><td><a href="resend.md">resend.md</a></td><td></td></tr>
+<tr><td><strong>Twilio</strong></td><td>Kennis voor sms, spraak, WhatsApp, Verify, SendGrid en 30+ andere Twilio-producten.</td><td><a href="twilio.md">twilio.md</a></td><td></td></tr>
+<tr><td><strong>PostHog</strong></td><td>Analytics, feature flags, experimenten en error tracking van PostHog vanuit Claude.</td><td><a href="posthog.md">posthog.md</a></td><td></td></tr>
+<tr><td><strong>Shopify AI Toolkit</strong></td><td>18 skills om op Shopify te bouwen: documentatie, API-schema's, GraphQL/Liquid-validatie, Hydrogen en Polaris.</td><td><a href="shopify.md">shopify.md</a></td><td></td></tr>
+<tr><td><strong>Wix</strong></td><td>Wix-sites en -apps bouwen, beheren en publiceren, met het Wix Design System en een MCP-server.</td><td><a href="wix.md">wix.md</a></td><td></td></tr>
+<tr><td><strong>Build with WordPress</strong></td><td>Productieklare WordPress-sites en -apps: thema's, plugins, webshops en deployen.</td><td><a href="wordpress.md">wordpress.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -50,3 +61,14 @@ Officiële skills van Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging
 | [Stripe](stripe.md) | Claude Code (+ andere agents) | Stripe (officieel van de makers) |
 | [Sentry Skills](sentry.md) | Claude Code | Sentry (officieel van de makers) |
 | [Firecrawl](firecrawl.md) | Claude Code (API-sleutel nodig) | Firecrawl (officieel van de makers) |
+| [Firebase](firebase.md) | Claude Code | Google · officiële Claude-marketplace |
+| [MongoDB](mongodb.md) | Claude Code | MongoDB · officiële Claude-marketplace |
+| [Prisma](prisma.md) | Claude Code | Prisma · officiële Claude-marketplace |
+| [Vercel (deployen)](vercel-deploy.md) | Claude Code | Vercel · officiële Claude-marketplace |
+| [Netlify](netlify.md) | Claude Code | Netlify · officiële Claude-marketplace |
+| [Resend](resend.md) | Claude Code | Resend · officiële Claude-marketplace |
+| [Twilio](twilio.md) | Claude Code | Twilio · officiële Claude-marketplace |
+| [PostHog](posthog.md) | Claude Code | PostHog · officiële Claude-marketplace |
+| [Shopify AI Toolkit](shopify.md) | Claude Code | Shopify · officiële Claude-marketplace |
+| [Wix](wix.md) | Claude Code | Wix · officiële Claude-marketplace |
+| [Build with WordPress](wordpress.md) | Claude Code | WordPress · officiële Claude-marketplace |

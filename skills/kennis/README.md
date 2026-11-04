@@ -27,6 +27,7 @@ Laat Claude dingen onthouden tussen sessies, werk samen met je Obsidian-vault en
 <tr><td><strong>Claude-Mem</strong></td><td>Geeft Claude Code een blijvend geheugen: wat in eerdere sessies gebeurde, komt automatisch terug.</td><td><a href="claude-mem.md">claude-mem.md</a></td><td></td></tr>
 <tr><td><strong>Claudeception</strong></td><td>Laat Claude Code zelf nieuwe skills schrijven van wat hij tijdens het werk ontdekt.</td><td><a href="claudeception.md">claudeception.md</a></td><td></td></tr>
 <tr><td><strong>Obsidian Skills</strong></td><td>Officiële skills van de Obsidian-maker: notities, Bases, JSON Canvas en de Obsidian CLI.</td><td><a href="obsidian-skills.md">obsidian-skills.md</a></td><td></td></tr>
+<tr><td><strong>Remember</strong></td><td>Doorlopend geheugen voor Claude Code: gesprekken worden samengevat in dagelijkse logboeken.</td><td><a href="remember.md">remember.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -36,3 +37,4 @@ Laat Claude dingen onthouden tussen sessies, werk samen met je Obsidian-vault en
 | [Claude-Mem](claude-mem.md) | Claude Code (+ andere agents) | thedotmack (community) |
 | [Claudeception](claudeception.md) | Claude Code | blader (community) |
 | [Obsidian Skills](obsidian-skills.md) | Claude Code (+ Codex, OpenCode) | Steph Ango / kepano (maker van Obsidian) |
+| [Remember](remember.md) | Claude Code | Community · officiële Claude-marketplace |

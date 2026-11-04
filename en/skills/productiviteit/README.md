@@ -38,6 +38,8 @@ Handy everyday skills: organising files and invoices, Google Workspace, Notebook
 <tr><td><strong>Markdown to EPUB</strong></td><td>Converts markdown, research or chat summaries into a neat e-book (EPUB3).</td><td><a href="epub.md">epub.md</a></td><td></td></tr>
 <tr><td><strong>Skill Seekers</strong></td><td>Automatically turns any documentation website, GitHub repo, PDF or video into a Claude skill.</td><td><a href="skill-seekers.md">skill-seekers.md</a></td><td></td></tr>
 <tr><td><strong>Family History Research</strong></td><td>Help with planning family tree and genealogy research.</td><td><a href="family-history.md">family-history.md</a></td><td></td></tr>
+<tr><td><strong>Exa Search</strong></td><td>AI web search and deep research: people, companies, academic papers and more.</td><td><a href="exa.md">exa.md</a></td><td></td></tr>
+<tr><td><strong>Tavily</strong></td><td>Real-time web data for your AI apps: search, extract, crawl and research via Tavily's APIs.</td><td><a href="tavily.md">tavily.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Quick overview
@@ -58,3 +60,5 @@ Handy everyday skills: organising files and invoices, Google Workspace, Notebook
 | [Markdown to EPUB](epub.md) | Claude Code, Claude app | smerchek (community) |
 | [Skill Seekers](skill-seekers.md) | Standalone tool (Python), output works in Claude | yusufkaraaslan (community) |
 | [Family History Research](family-history.md) | Claude app, Claude Code | emaynard (community) |
+| [Exa Search](exa.md) | Claude Code | Exa · official Claude marketplace |
+| [Tavily](tavily.md) | Claude Code | Tavily · official Claude marketplace |

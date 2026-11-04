@@ -38,6 +38,8 @@ Handige alledaagse skills: bestanden en facturen ordenen, Google Workspace, Note
 <tr><td><strong>Markdown to EPUB</strong></td><td>Zet markdown, onderzoek of chatsamenvattingen om naar een net e-book (EPUB3).</td><td><a href="epub.md">epub.md</a></td><td></td></tr>
 <tr><td><strong>Skill Seekers</strong></td><td>Zet elke documentatiewebsite, GitHub-repo, PDF of video automatisch om in een Claude-skill.</td><td><a href="skill-seekers.md">skill-seekers.md</a></td><td></td></tr>
 <tr><td><strong>Family History Research</strong></td><td>Hulp bij het plannen van stamboom- en genealogieonderzoek.</td><td><a href="family-history.md">family-history.md</a></td><td></td></tr>
+<tr><td><strong>Exa Search</strong></td><td>AI-webzoeken en diepgaand onderzoek: mensen, bedrijven, wetenschappelijke artikelen en meer.</td><td><a href="exa.md">exa.md</a></td><td></td></tr>
+<tr><td><strong>Tavily</strong></td><td>Realtime webdata voor je AI-apps: zoeken, uitlezen, crawlen en onderzoek via de Tavily-API's.</td><td><a href="tavily.md">tavily.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -58,3 +60,5 @@ Handige alledaagse skills: bestanden en facturen ordenen, Google Workspace, Note
 | [Markdown to EPUB](epub.md) | Claude Code, Claude-app | smerchek (community) |
 | [Skill Seekers](skill-seekers.md) | Losse tool (Python), output werkt in Claude | yusufkaraaslan (community) |
 | [Family History Research](family-history.md) | Claude-app, Claude Code | emaynard (community) |
+| [Exa Search](exa.md) | Claude Code | Exa · officiële Claude-marketplace |
+| [Tavily](tavily.md) | Claude Code | Tavily · officiële Claude-marketplace |
