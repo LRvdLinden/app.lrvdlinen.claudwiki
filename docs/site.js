@@ -8,6 +8,10 @@
       });
     });
   });
+  // taalkeuze onthouden
+  document.querySelectorAll('a.lang').forEach(function (a) {
+    a.addEventListener('click', function () { try { localStorage.setItem('cw-lang', a.getAttribute('data-lang')); } catch (e) {} });
+  });
   // menu
   var menu = document.querySelector('.menu');
   if (menu) menu.addEventListener('click', function () {
@@ -36,7 +40,7 @@
         return { e: e, s: s };
       }).filter(function (r) { return r.s > 0; }).sort(function (a, b) { return b.s - a.s; }).slice(0, 8);
       var html = res.map(function (r) { return '<a href="' + window.PREFIX + r.e.p.u + '"><strong>' + esc(r.e.p.t) + '</strong><span>' + esc(r.e.p.d) + '</span></a>'; }).join('');
-      html += '<a href="' + window.PREFIX + 'adviseur/?q=' + encodeURIComponent(input.value.trim()) + '"><strong>Vraag de Skill-adviseur →</strong><span>Beschrijf wat je wilt en krijg de beste skill</span></a>';
+      html += '<a href="' + window.PREFIX + 'adviseur/?q=' + encodeURIComponent(input.value.trim()) + '"><strong>' + esc(window.UI.ask) + '</strong><span>' + esc(window.UI.asksub) + '</span></a>';
       box.innerHTML = html; box.hidden = false; sel = -1;
     });
   }
@@ -53,4 +57,43 @@
   document.querySelector('.search').addEventListener('submit', function (e) { e.preventDefault(); });
   document.addEventListener('click', function (e) { if (!e.target.closest('.search')) box.hidden = true; });
   document.addEventListener('keydown', function (e) { if ((e.metaKey || e.ctrlKey) && e.key === 'k') { e.preventDefault(); input.focus(); } });
+})();
+
+// Terminal-animatie
+(function () {
+  var el = document.querySelector('.term[data-scenes]');
+  if (!el) return;
+  var body = el.querySelector('.term-body');
+  var scenes; try { scenes = JSON.parse(el.getAttribute('data-scenes')); } catch (e) { return; }
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return; // statische eindstand blijft staan
+  var SPIN = ['✶', '✸', '✹', '✺', '✹', '✷'];
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+  function line(cls) { var s = document.createElement('span'); s.className = 'term-line ' + (cls || ''); body.appendChild(s); return s; }
+  async function type(span, text, speed) {
+    var cur = document.createElement('span'); cur.className = 'cursor'; span.appendChild(cur);
+    for (var i = 0; i < text.length; i++) { cur.before(text[i]); await sleep(speed + Math.random() * speed); }
+    cur.remove();
+  }
+  async function spin(label, ms) {
+    var s = line('t-spin'), t0 = Date.now(), i = 0;
+    while (Date.now() - t0 < ms) { s.textContent = SPIN[i++ % SPIN.length] + ' ' + label; await sleep(110); }
+    s.remove();
+  }
+  async function play() {
+    for (;;) {
+      for (var k = 0; k < scenes.length; k++) {
+        var sc = scenes[k];
+        body.innerHTML = '';
+        for (var j = 0; j < sc.length; j++) {
+          var st = sc[j];
+          if (st.type) { var l = line(st.cls); if (st.pre) { var p = document.createElement('span'); p.className = 't-acc'; p.textContent = st.pre; l.appendChild(p); } await type(l, st.type, 28); await sleep(350); }
+          else if (st.spin) { await spin(st.spin, st.ms || 1200); }
+          else { var o = line(st.cls); o.textContent = st.out; await sleep(st.ms || 260); }
+        }
+        await sleep(2600);
+      }
+    }
+  }
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); play(); } }) : null;
+  if (io) io.observe(el); else play();
 })();

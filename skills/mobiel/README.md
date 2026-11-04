@@ -31,6 +31,8 @@ Skills voor iOS-, SwiftUI- en React Native/Expo-ontwikkelaars: van SwiftUI-best 
 <tr><td><strong>Swift Testing Pro</strong></td><td>Goede tests schrijven met het nieuwe Swift Testing-framework (@Test, #expect).</td><td><a href="swift-testing-pro.md">swift-testing-pro.md</a></td><td></td></tr>
 <tr><td><strong>iOS Simulator Skill</strong></td><td>Laat Claude je iOS-app bouwen, starten en testen in de Simulator, met 30 hulpscripts.</td><td><a href="ios-simulator.md">ios-simulator.md</a></td><td></td></tr>
 <tr><td><strong>Expo Skills</strong></td><td>Officiële Expo-skills: React Native-apps bouwen, Expo Router, EAS Build/Update en publiceren in de stores.</td><td><a href="expo.md">expo.md</a></td><td></td></tr>
+<tr><td><strong>RevenueCat</strong></td><td>In-app aankopen en abonnementen instellen: producten, entitlements en offerings in RevenueCat.</td><td><a href="revenuecat.md">revenuecat.md</a></td><td></td></tr>
+<tr><td><strong>Mapbox</strong></td><td>Locatie-apps bouwen: geo-tools, kaartstijlen en patronen voor web, iOS en Android.</td><td><a href="mapbox.md">mapbox.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -44,3 +46,5 @@ Skills voor iOS-, SwiftUI- en React Native/Expo-ontwikkelaars: van SwiftUI-best 
 | [Swift Testing Pro](swift-testing-pro.md) | Claude Code (+ Codex, Gemini) | Paul Hudson / twostraws (community) |
 | [iOS Simulator Skill](ios-simulator.md) | Claude Code op macOS met Xcode | Conor Luddy (community) |
 | [Expo Skills](expo.md) | Claude Code (+ Codex, Cursor en meer) | Expo (officieel van de makers) |
+| [RevenueCat](revenuecat.md) | Claude Code | RevenueCat · officiële Claude-marketplace |
+| [Mapbox](mapbox.md) | Claude Code | Mapbox · officiële Claude-marketplace |

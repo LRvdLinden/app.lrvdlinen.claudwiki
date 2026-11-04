@@ -1,0 +1,965 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Development | Claude Wiki</title>
+<meta name="description" content="123 plugins from the official Claude Code marketplace in the Development category.">
+<link rel="canonical" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html">
+<link rel="alternate" hreflang="nl" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/development.html"><link rel="alternate" hreflang="en" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html"><link rel="alternate" hreflang="x-default" href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html">
+<meta name="theme-color" content="#FAF9F5" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../../favicon.ico" sizes="32x32"><link rel="icon" href="../../assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../../apple-touch-icon.png"><link rel="manifest" href="../../site.webmanifest">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Claude Wiki">
+<meta property="og:title" content="Development | Claude Wiki"><meta property="og:description" content="123 plugins from the official Claude Code marketplace in the Development category.">
+<meta property="og:url" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="nl_NL">
+<meta property="og:image" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-en.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/png"><meta property="og:image:alt" content="Claude Wiki – Development">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Development | Claude Wiki">
+<meta name="twitter:description" content="123 plugins from the official Claude Code marketplace in the Development category."><meta name="twitter:image" content="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-en.png"><meta name="twitter:image:alt" content="Claude Wiki – Development">
+<script>(function(){var c=null;try{c=localStorage.getItem('cw-lang')}catch(e){}if(/bot|crawl|spider|slurp|preview|facebookexternalhit|linkedin|whatsapp|telegram|discord|lighthouse/i.test(navigator.userAgent))return;function nl(){var z='';try{z=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}var l=((navigator.languages||[]).join(',')||navigator.language||'').toLowerCase();return z==='Europe/Amsterdam'||/(^|,)nl/.test(l)}if(c==='nl')location.replace('https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/catalogus/development.html'+location.search+location.hash)})();</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Lora:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@500&display=swap">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html", "url": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html", "name": "Development", "description": "123 plugins from the official Claude Code marketplace in the Development category.", "inLanguage": "en", "isPartOf": {"@id": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/#website"}, "primaryImageOfPage": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/og/catalogus-en.png", "dateModified": "2026-11-05"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/"}, {"@type": "ListItem", "position": 2, "name": "Overview", "item": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/"}, {"@type": "ListItem", "position": 3, "name": "Development", "item": "https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/catalogus/development.html"}]}]}</script>
+<style>/* Claude Wiki – Claude-geïnspireerd palet (crème, antraciet, terracotta), Poppins + Lora. Eigen logo. */
+:root{
+  --bg:#FAF9F5; --panel:#F3F1EA; --surface:#FFFFFF; --line:#E8E6DC; --fg:#141413; --muted:#5E5D59;
+  --accent:#C6613F; --accent-soft:#F6E3DA; --blue:#6A9BCC; --green:#788C5D; --code:#F5F4EE;
+  --info:#6A9BCC; --success:#788C5D; --warning:#C9952B; --danger:#C6613F;
+  --display:"Poppins",Arial,sans-serif; --body:"Lora",Georgia,serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --side:290px; --top:64px; color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#141413; --panel:#1B1A19; --surface:#1F1E1D; --line:#353431; --fg:#F4F2EA; --muted:#B0AEA5;
+  --accent:#E08A6D; --accent-soft:#3A2620; --code:#1A1918; --warning:#E0B25A; color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-padding-top:calc(var(--top) + 16px)}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.7 var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* top */
+.top{position:sticky;top:0;z-index:20;height:var(--top);display:flex;align-items:center;gap:14px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--fg);flex:none}
+.brand span{font:600 17px/1.1 var(--display);display:flex;flex-direction:column}
+.brand small{font:italic 12px var(--body);color:var(--muted)}
+.menu{display:none;border:1px solid var(--line);background:var(--surface);color:var(--fg);border-radius:8px;width:38px;height:38px;font-size:18px;cursor:pointer}
+.search{position:relative;flex:1;max-width:460px;margin-left:auto}
+.search input{width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--fg);padding:0 14px;font:15px var(--display)}
+.sres{position:absolute;top:46px;left:0;right:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgb(0 0 0/.12);max-height:70vh;overflow:auto;padding:6px}
+.sres a{display:block;padding:9px 12px;border-radius:8px;text-decoration:none;color:var(--fg)}
+.sres a:hover,.sres a.sel{background:var(--panel)}
+.sres strong{font:600 14px var(--display);display:block}
+.sres span{font-size:13px;color:var(--muted)}
+.lang{flex:none;font:600 13px var(--display);text-decoration:none;color:var(--fg);border:1px solid var(--line);background:var(--surface);padding:8px 11px;border-radius:10px}
+.lang:hover{border-color:var(--accent)}
+.adv{flex:none;font:600 14px var(--display);text-decoration:none;background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px}
+
+/* layout */
+.layout{display:grid;grid-template-columns:var(--side) minmax(0,1fr)}
+.side{position:sticky;top:var(--top);height:calc(100vh - var(--top));overflow:auto;padding:22px 18px 40px max(16px,env(safe-area-inset-left,0px));border-right:1px solid var(--line);background:var(--panel)}
+.side a{display:block;text-decoration:none;color:var(--fg);font:500 14px/1.35 var(--display);padding:6px 10px;border-radius:8px}
+.side a:hover{background:var(--line)}
+.side a.on{background:var(--accent-soft);color:var(--accent)}
+.side .sub{list-style:none;margin:2px 0 6px 10px;padding:0 0 0 8px;border-left:1px solid var(--line)}
+.side .sub a{font-weight:400;font-size:13.5px;color:var(--muted)}
+.side .sub a.on{color:var(--accent)}
+.nav-g{font:600 11px var(--display);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 10px 6px}
+main{min-width:0;padding:28px max(16px,env(safe-area-inset-right,0px)) 60px max(16px,env(safe-area-inset-left,0px))}
+.cover{display:block;width:100%;max-width:1100px;height:auto;aspect-ratio:1990/480;object-fit:cover;border-radius:16px;margin:0 auto 8px;border:1px solid var(--line)}
+article{max-width:780px;margin:0 auto}
+
+/* typografie */
+h1,h2,h3,h4{font-family:var(--display);line-height:1.2;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(30px,4.5vw,44px);font-weight:700;margin:28px 0 6px}
+h2{font-size:26px;font-weight:600;margin:44px 0 12px;padding-top:8px}
+h3{font-size:19px;font-weight:600;margin:28px 0 8px}
+.lead{font-size:20px;color:var(--muted);margin:0 0 26px;font-style:italic}
+p,li{max-width:70ch}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{font:500 .86em var(--mono);background:var(--code);border:1px solid var(--line);border-radius:6px;padding:1px 5px}
+pre{background:var(--code);border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow-x:auto;line-height:1.5}
+pre code{background:none;border:0;padding:0;font-size:13.5px}
+figure.code{margin:18px 0}
+figure.code figcaption{font:500 12.5px var(--display);color:var(--muted);margin-bottom:6px}
+figure.code pre{white-space:pre-wrap}
+table{border-collapse:collapse;width:100%;font-size:15px;display:block;overflow-x:auto}
+th,td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+th{font:600 13px var(--display);color:var(--muted)}
+thead th:empty{display:none}
+details{border:1px solid var(--line);border-radius:12px;padding:10px 16px;margin:10px 0;background:var(--surface)}
+summary{font:600 16px var(--display);cursor:pointer}
+kbd{font:500 12px var(--mono);border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 5px;background:var(--surface)}
+
+/* blokken */
+.btn{display:inline-block;font:600 15px var(--display);text-decoration:none;padding:11px 18px;border-radius:12px;margin:6px 8px 6px 0}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.secondary{border:1px solid var(--line);color:var(--fg);background:var(--surface)}
+.hint{display:grid;grid-template-columns:28px 1fr;gap:12px;border-radius:14px;padding:14px 16px;margin:20px 0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--info)}
+.hint>div>:first-child{margin-top:0}.hint>div>:last-child{margin-bottom:0}
+.hint-i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font:700 13px var(--display);color:#fff;background:var(--info)}
+.hint.success{border-left-color:var(--success)}.hint.success .hint-i{background:var(--success)}
+.hint.warning{border-left-color:var(--warning)}.hint.warning .hint-i{background:var(--warning)}
+.hint.danger{border-left-color:var(--danger)}.hint.danger .hint-i{background:var(--danger)}
+.tabs{border:1px solid var(--line);border-radius:14px;margin:20px 0;background:var(--surface);overflow:hidden}
+.tablist{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);background:var(--panel)}
+.tablist button{border:0;background:none;color:var(--muted);font:600 14px var(--display);padding:12px 16px;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
+.tablist button[aria-selected="true"]{color:var(--accent);border-bottom-color:var(--accent)}
+.pane{padding:6px 18px 12px}
+.stepper{list-style:none;counter-reset:s;padding:0;margin:20px 0}
+.stepper>li{counter-increment:s;position:relative;padding:0 0 18px 50px;border-left:2px solid var(--line);margin-left:16px}
+.stepper>li:last-child{border-left-color:transparent}
+.stepper>li::before{content:counter(s);position:absolute;left:-17px;top:0;width:32px;height:32px;border-radius:50%;background:var(--accent);color:#fff;font:600 15px/32px var(--display);text-align:center}
+.stepper h3{margin-top:2px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;margin:20px 0}
+.card{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card img{width:100%;aspect-ratio:1990/480;object-fit:cover;border-radius:8px;margin-bottom:4px}
+.card strong{font:600 16px var(--display)}
+.card span{font-size:14px;color:var(--muted);line-height:1.5}
+.embed{display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:14px;padding:14px 16px;text-decoration:none;color:var(--fg);background:var(--surface);margin:18px 0}
+.embed-k{font:600 11px var(--display);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.embed-u{font:12px var(--mono);color:var(--muted);overflow-wrap:anywhere}
+.pager{max-width:780px;margin:48px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pager a{border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--fg);font:600 15px var(--display);background:var(--surface)}
+.pager a:last-child{text-align:right}
+.pager small{display:block;font:500 12px var(--display);color:var(--muted)}
+footer{max-width:780px;margin:40px auto 0;padding-top:18px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+
+/* mobiel */
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .menu{display:block}
+  .side{position:fixed;top:var(--top);left:0;bottom:0;width:min(86vw,330px);height:auto;z-index:30;transform:translateX(-102%);transition:transform .2s;box-shadow:0 0 40px rgb(0 0 0/.2)}
+  body.nav-open .side{transform:none}
+  .brand small{display:none}
+  .adv{display:none}
+  .lang span{display:none}
+  .search{max-width:none}
+}
+@media (max-width:520px){.brand span{display:none}.pager{grid-template-columns:1fr}.pager a:last-child{text-align:left}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Terminal-animatie (Claude Code-stijl) */
+.term{max-width:780px;margin:26px auto 8px;border-radius:14px;overflow:hidden;background:#1A1918;border:1px solid #33312E;box-shadow:0 18px 50px rgb(20 20 19/.18);font:13.5px/1.65 var(--mono);color:#E8E6DC}
+.term-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#242321;border-bottom:1px solid #33312E}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#4A4844}.term-bar i:nth-child(1){background:#E0765F}.term-bar i:nth-child(2){background:#D9A54A}.term-bar i:nth-child(3){background:#788C5D}
+.term-bar span{margin-left:8px;font:500 12px var(--display);color:#B0AEA5}
+.term-body{padding:16px 18px 18px;min-height:250px;white-space:pre-wrap;overflow-wrap:anywhere}
+.term-line{display:block;min-height:1.65em}
+.t-dim{color:#8F8D86}.t-acc{color:#E08A6D}.t-ok{color:#9BB07F}.t-blue{color:#8DB4DA}.t-user{color:#FAF9F5}
+.t-box{display:block;border:1px solid #4A4844;border-radius:8px;padding:6px 10px;margin:6px 0}
+.cursor{display:inline-block;width:.6em;height:1.1em;vertical-align:-2px;background:#E08A6D;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.t-spin{color:#E08A6D}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}
+</style></head><body>
+<header class="top"><button class="menu" aria-label="Menu" aria-expanded="false">☰</button>
+<a class="brand" href="../index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="34" height="34" aria-hidden="true">
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="#D97757"/>
+  <path d="M24 40c13-5 27-4 40 4v54c-13-8-27-9-40-4z" fill="#FAF9F5"/>
+  <path d="M104 40c-13-5-27-4-40 4v54c13-8 27-9 40-4z" fill="#F0EEE6"/>
+  <path d="M32 56h22M32 66h22M32 76h15" stroke="#D97757" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M80 30v30l7-5 7 5V30z" fill="#141413"/>
+</svg>
+<span>Claude Wiki<small>unofficial guide</small></span></a>
+<form class="search" role="search"><input id="s" type="search" placeholder="Search the wiki…" autocomplete="off" aria-label="Search"><div class="sres" hidden></div></form>
+<a class="lang" href="../../catalogus/development.html" hreflang="nl" lang="nl" data-lang="nl">NL<span> · Nederlands</span></a>
+<a class="adv" href="../adviseur/">Skill adviser</a></header>
+<div class="layout"><nav class="side" aria-label="Navigation"><a href="../index.html">Welcome</a>
+<a href="../adviseur/">Skill adviser</a>
+<p class="nav-g">Getting started</p>
+<a href="../basis/index.html">The basics</a>
+<a href="../gespot-op-social/index.html">Spotted on social</a>
+<p class="nav-g">Skills by category</p>
+<a href="../skills/index.html">All skills</a>
+<a href="../skills/documenten/index.html">Documents &amp; office</a>
+<a href="../skills/design/index.html">Design &amp; frontend</a>
+<a href="../skills/creatief/index.html">Creative &amp; video</a>
+<a href="../skills/denken/index.html">Thinking &amp; planning</a>
+<a href="../skills/ontwikkeling/index.html">Development &amp; code</a>
+<a href="../skills/content/index.html">Writing, content &amp; marketing</a>
+<a href="../skills/kennis/index.html">Knowledge &amp; memory</a>
+<a href="../skills/zakelijk/index.html">Business by role</a>
+<a href="../skills/security/index.html">Security &amp; science</a>
+<a href="../skills/bouwen/index.html">Build your own skills</a>
+<a href="../skills/mobiel/index.html">Apps &amp; mobile</a>
+<a href="../skills/cloud/index.html">Data, cloud &amp; payments</a>
+<a href="../skills/productiviteit/index.html">Productivity &amp; tools</a>
+<a href="../skills/media/index.html">Audio, images &amp; visuals</a>
+<a href="../skills/koppelingen/index.html">Connect your apps</a>
+<p class="nav-g">Plugin catalogue (315)</p>
+<a href="../catalogus/index.html">Overview</a>
+<ul class="sub">
+<a href="../catalogus/development.html" class="on" aria-current="page">Development (123)</a>
+<a href="../catalogus/productivity.html">Productivity (69)</a>
+<a href="../catalogus/database.html">Databases (39)</a>
+<a href="../catalogus/monitoring.html">Monitoring &amp; observability (22)</a>
+<a href="../catalogus/security.html">Security (18)</a>
+<a href="../catalogus/overig.html">Other (14)</a>
+<a href="../catalogus/deployment.html">Deployment &amp; hosting (9)</a>
+<a href="../catalogus/design.html">Design (8)</a>
+<a href="../catalogus/automation.html">Automation (3)</a>
+<a href="../catalogus/learning.html">Learning &amp; explanatory style (3)</a>
+<a href="../catalogus/location.html">Location &amp; maps (2)</a>
+<a href="../catalogus/testing.html">Testing (2)</a>
+<a href="../catalogus/math.html">Mathematics (2)</a>
+<a href="../catalogus/migration.html">Migration (1)</a>
+</ul>
+<p class="nav-g">More</p>
+<a href="../bronnen/index.html">Resources &amp; marketplaces</a>
+<a href="../bronnen/faq.html">FAQ</a>
+<a href="../bronnen/over.html">About this wiki</a></nav>
+<main><img class="cover" src="../../assets/cover-en-catalogus.png" alt="" width="1990" height="480" fetchpriority="high"><article><h1>Development</h1><p class="lead">123 plugins from the official Claude Code marketplace in the Development category.</p>
+<p>123 plugins. Install in Claude Code: <code>/plugin install &lt;name&gt;@claude-plugins-official</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Maker</th>
+<th>What it does</th>
+<th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/plugins/agent-sdk-dev"><strong>agent-sdk-dev</strong></a></td>
+<td>Anthropic</td>
+<td>Development kit for working with the Claude Agent SDK</td>
+<td><code>/plugin install agent-sdk-dev@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/SalesforceAIResearch/agentforce-adlc"><strong>agentforce-adlc</strong></a></td>
+<td></td>
+<td>Agentforce Agent Development Life Cycle — author, discover, scaffold, deploy, test, and optimize .agent files</td>
+<td><code>/plugin install agentforce-adlc@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.airwallex.com/docs"><strong>airwallex-dev</strong></a></td>
+<td>Airwallex</td>
+<td>Build Airwallex payment integrations in your own codebase. Generates the checkout, card-element, onboarding, and subscription-billing code for an Airwallex integration and wires it into your project: Hosted Payment Page, Drop-in and Split Card elements, connected-account KYC onboarding, and Billing Hosted Checkout for subscriptions and card-saving. Also plans card-on-file merchant-initiated flows for AI providers such as top-ups and auto-recharge.</td>
+<td><code>/plugin install airwallex-dev@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.amd.com/"><strong>amd-skills</strong></a></td>
+<td>AMD</td>
+<td>AMD's verified Agent Skills in one plugin: route image/audio through local AI on Ryzen AI, serve LLMs on AMD Instinct GPUs with vLLM, optimize inference throughput with Hyperloom, and analyze GPU kernel and PyTorch trace performance.</td>
+<td><code>/plugin install amd-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.apollographql.com"><strong>apollo-skills</strong></a></td>
+<td>Apollo GraphQL</td>
+<td>Apollo GraphQL agent skills for Claude Code — Apollo Client, Server, Federation, Connectors, Router, Rover CLI, iOS, Kotlin, and the Apollo MCP server. Covers schema design, query optimization, and GraphQL best practices.</td>
+<td><code>/plugin install apollo-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://appwrite.io"><strong>appwrite</strong></a></td>
+<td>Appwrite</td>
+<td>Appwrite tools for Claude Code, including SDK skills, Appwrite MCP servers, and deployment commands.</td>
+<td><code>/plugin install appwrite@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/astronomer/agents"><strong>astronomer-data-agents</strong></a></td>
+<td></td>
+<td>Data engineering for Apache Airflow and Astronomer. Author DAGs with best practices, debug pipeline failures, trace data lineage, profile tables, migrate Airflow 2 to 3, and manage local and cloud deployments.</td>
+<td><code>/plugin install astronomer-data-agents@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/BrainBlend-AI/atomic-agents"><strong>atomic-agents</strong></a></td>
+<td></td>
+<td>Comprehensive development workflow for building AI agents with the Atomic Agents framework. Includes specialized agents for schema design, architecture planning, code review, and tool development. Features guided workflows, progressive-disclosure skills, and best practice validation.</td>
+<td><code>/plugin install atomic-agents@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/agent-toolkit-for-aws"><strong>aws-agents</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Build, deploy, and operate AI agents on AWS. Skills for scaffolding agents with Amazon Bedrock AgentCore, connecting tools, memory, policies, evaluation, debugging, and production hardening.</td>
+<td><code>/plugin install aws-agents@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/agent-toolkit-for-aws"><strong>aws-agents-for-devsecops</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Investigate incidents, review code and execute UAT for release readiness, scan code for vulnerabilities, and run penetration tests with AWS DevOps Agent and AWS Security Agent.</td>
+<td><code>/plugin install aws-agents-for-devsecops@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/awslabs/agent-plugins"><strong>aws-amplify</strong></a></td>
+<td></td>
+<td>Build full-stack apps with AWS Amplify Gen 2 using guided workflows for authentication, data models, storage, GraphQL APIs, and Lambda functions.</td>
+<td><code>/plugin install aws-amplify@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/agent-toolkit-for-aws"><strong>aws-core</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Build, deploy, and operate applications on AWS. Skills to author infrastructure-as-code, use core services, and complete common tasks.</td>
+<td><code>/plugin install aws-core@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/agent-toolkit-for-aws"><strong>aws-data-analytics</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Data lake, analytics, and ETL workflows with S3 Tables, AWS Glue, and Athena.</td>
+<td><code>/plugin install aws-data-analytics@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/awslabs/agent-plugins"><strong>aws-serverless</strong></a></td>
+<td></td>
+<td>Design, build, deploy, test, and debug serverless applications with AWS Serverless services.</td>
+<td><code>/plugin install aws-serverless@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/aws/agent-toolkit-for-aws"><strong>aws-startup-advisor</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Personalized AWS guidance built on patterns from 350,000+ startups. Get architecture, cost, and security recommendations matched to your stage, from day-one account setup to production-ready infrastructure. Migrate to AWS from Azure, GCP, or Heroku with resource discovery, cost estimates, and generated Terraform. Move OpenAI, Azure OpenAI, and Gemini code to Amazon Bedrock, and plan and prototype AI agents on AgentCore and other AWS runtimes. Includes AWS Activate credits eligibility, 60+ exclusive startup offers, and multi-account, multi-region support. Built by AWS Startup Solutions Architects.</td>
+<td><code>/plugin install aws-startup-advisor@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.base44.com"><strong>base44</strong></a></td>
+<td></td>
+<td>Build and deploy Base44 full-stack apps with CLI project management and JavaScript/TypeScript SDK development skills</td>
+<td><code>/plugin install base44@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://boltz.bio"><strong>boltz</strong></a></td>
+<td>Boltz</td>
+<td>Predict structures, screen molecules and proteins, and design binders with Boltz from Claude Code.</td>
+<td><code>/plugin install boltz@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://buildkite.com"><strong>buildkite</strong></a></td>
+<td>Buildkite</td>
+<td>Official Buildkite skills for Claude Code, Cursor, and other AI coding agents — pipelines, migration, preflight, agent runtime, CLI, and API</td>
+<td><code>/plugin install buildkite@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://catalyst.zoho.com/"><strong>catalyst-by-zoho</strong></a></td>
+<td>Catalyst by Zoho</td>
+<td>Official Claude Code plugin for Catalyst by Zoho — full-stack serverless cloud platform. With Skills that covers all services, SDKs, CLI, architecture patterns, pricing, migration guides, and Zoho MCP tool-based resource management.</td>
+<td><code>/plugin install catalyst-by-zoho@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://cap.cloud.sap/"><strong>cds-mcp</strong></a></td>
+<td>SAP SE</td>
+<td>AI-assisted development of SAP Cloud Application Programming Model (CAP) projects. Search CDS models and CAP documentation.</td>
+<td><code>/plugin install cds-mcp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/ChromeDevTools/chrome-devtools-mcp"><strong>chrome-devtools-mcp</strong></a></td>
+<td></td>
+<td>Control and inspect a live Chrome browser from your coding agent. Record performance traces, analyze network requests, check console messages with source-mapped stack traces, and automate browser actions with Puppeteer.</td>
+<td><code>/plugin install chrome-devtools-mcp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.circle.com"><strong>circle-skills</strong></a></td>
+<td>Circle</td>
+<td>Ship stablecoin apps faster. Best-practice skills for USDC payments, cross-chain transfers, wallets, and smart contracts — plus Circle's MCP server for real-time SDK and documentation guidance.</td>
+<td><code>/plugin install circle-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://ckeditor.com"><strong>ckeditor</strong></a></td>
+<td>CKEditor (CKSource)</td>
+<td>Install, configure, and integrate CKEditor 5 (free and premium) in any JavaScript project.</td>
+<td><code>/plugin install ckeditor@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>clangd-lsp</strong></td>
+<td>Anthropic</td>
+<td>C/C++ language server (clangd) for code intelligence</td>
+<td><code>/plugin install clangd-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/code-modernization"><strong>code-modernization</strong></a></td>
+<td>Anthropic</td>
+<td>Guided modernization for any legacy codebase: start with /modernize, get an assessment, an interactive map, the business rules mined from the code, and a plan you approve, then an upgrade, a rewrite or a rebuild with independent proof that the new code behaves like the old. Includes security hardening, a one-page report, specialist agents, and an optional live progress pane (early access).</td>
+<td><code>/plugin install code-modernization@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://codspeed.io"><strong>codspeed</strong></a></td>
+<td>CodSpeed</td>
+<td>CodSpeed is the all-in-one performance testing toolkit. Dive into benchmarking results, flamegraphs, and performance comparisons — give Claude granular profiling context to pinpoint bottlenecks and autonomously iterate on performance via the CodSpeed MCP server.</td>
+<td><code>/plugin install codspeed@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://confidence.spotify.com"><strong>confidence</strong></a></td>
+<td>Spotify Confidence</td>
+<td>Access Confidence feature flags, experiments, and migration tools directly from Claude Code.</td>
+<td><code>/plugin install confidence@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/context7"><strong>context7</strong></a></td>
+<td>Upstash</td>
+<td>Upstash Context7 MCP server for up-to-date documentation lookup. Connects to Context7's hosted remote MCP server (https://mcp.context7.com/mcp) — no local Node.js or npx required — to pull version-specific documentation and code examples directly from source repositories into your LLM context. Works anonymously out of the box; set CONTEXT7_API_KEY for higher rate limits.</td>
+<td><code>/plugin install context7@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>csharp-lsp</strong></td>
+<td>Anthropic</td>
+<td>C# language server for code intelligence</td>
+<td><code>/plugin install csharp-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/astronomer/agents"><strong>data</strong></a></td>
+<td></td>
+<td>Data engineering for Apache Airflow and Astronomer. Author DAGs with best practices, debug pipeline failures, trace data lineage, profile tables, migrate Airflow 2 to 3, and manage local and cloud deployments.</td>
+<td><code>/plugin install data@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://cloud.google.com/products/data-agent-kit"><strong>data-agent-kit</strong></a></td>
+<td>Google LLC</td>
+<td>This plugin provides a specialized suite of skills for data engineers and database practitioners working on Google Cloud. It acts as an expert assistant, allowing you to use natural language prompts in your preferred coding agent to architect complex data pipelines, transform data with dbt, write Spark and BigQuery SQL notebooks, and orchestrate end-to-end workflows across GCP's data ecosystem.</td>
+<td><code>/plugin install data-agent-kit@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://datarobot.com"><strong>datarobot-agent-skills</strong></a></td>
+<td>DataRobot</td>
+<td>DataRobot skills for AI/ML workflows — model training, deployment, predictions, feature engineering, monitoring, explainability, data preparation, App Framework CI/CD, and external agent monitoring.</td>
+<td><code>/plugin install datarobot-agent-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/confident-ai/deepeval"><strong>deepeval</strong></a></td>
+<td>Confident AI</td>
+<td>Skills for adding DeepEval evaluations, tracing, datasets, Confident AI reports, and iterative improvement loops to AI applications.</td>
+<td><code>/plugin install deepeval@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.domino.ai"><strong>dominodatalab</strong></a></td>
+<td>Domino Data Lab</td>
+<td>Full Domino Data Lab platform support — workspaces, jobs, model deployment, experiment tracking, GenAI tracing, Spark/Ray/Dask, and app deployment for data science teams</td>
+<td><code>/plugin install dominodatalab@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/expo/skills/blob/main/plugins/expo/README.md"><strong>expo</strong></a></td>
+<td></td>
+<td>Official Expo skills for building, deploying, upgrading, and debugging React Native apps with Expo. Covers UI development with Expo Router, SwiftUI and Jetpack Compose components, Tailwind CSS setup, API routes, data fetching, CI/CD workflows, App Store and Play Store deployment, SDK upgrades, DOM components, and dev client distribution.</td>
+<td><code>/plugin install expo@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>fakechat</strong></td>
+<td></td>
+<td>Localhost web chat for testing the channel notification flow. No tokens, no access control, no third-party service.</td>
+<td><code>/plugin install fakechat@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/plugins/feature-dev"><strong>feature-dev</strong></a></td>
+<td>Anthropic</td>
+<td>Comprehensive feature development workflow with specialized agents for codebase exploration, architecture design, and quality review</td>
+<td><code>/plugin install feature-dev@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/firecrawl/firecrawl-claude-plugin.git"><strong>firecrawl</strong></a></td>
+<td></td>
+<td>Web scraping and crawling powered by Firecrawl. Turn any website into clean, LLM-ready markdown or structured data. Scrape single pages, crawl entire sites, search the web, and extract structured information. Includes an AI agent for autonomous multi-source data gathering - just describe what you need and it finds, navigates, and extracts automatically.</td>
+<td><code>/plugin install firecrawl@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.atlassian.com/platform/forge/"><strong>forge-skills</strong></a></td>
+<td>Atlassian</td>
+<td>Forge-focused skills and MCP configuration for Atlassian Forge: scaffold and deploy apps (forge create, templates, dev spaces), build Teamwork Graph connectors for Rovo Search/Rovo Chat, pre-deploy review, systematic debugging, plus Forge docs and Atlassian Design System lookups via MCP.</td>
+<td><code>/plugin install forge-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/plugins/frontend-design"><strong>frontend-design</strong></a></td>
+<td>Anthropic</td>
+<td>Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.</td>
+<td><code>/plugin install frontend-design@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.gitkraken.com"><strong>gitkraken</strong></a></td>
+<td>GitKraken</td>
+<td>Gives Claude access to your real Git and project context: commits, branches, pull requests, and issues across every repo you work in. Works with GitHub, GitLab, Azure DevOps, Bitbucket, and Jira.</td>
+<td><code>/plugin install gitkraken@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>gopls-lsp</strong></td>
+<td>Anthropic</td>
+<td>Go language server for code intelligence and refactoring</td>
+<td><code>/plugin install gopls-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.greptile.com/docs/mcp-v2/overview"><strong>greptile</strong></a></td>
+<td>Greptile</td>
+<td>AI code review agent for GitHub and GitLab. View and resolve Greptile's PR review comments, run reviews on your working branch, and search your organization's knowledge base and coding patterns, directly from Claude Code.</td>
+<td><code>/plugin install greptile@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/huggingface/skills.git"><strong>huggingface-skills</strong></a></td>
+<td></td>
+<td>Build, train, evaluate, and use open source AI models, datasets, and spaces.</td>
+<td><code>/plugin install huggingface-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/taosdata/agent-skills"><strong>idmp-plugin</strong></a></td>
+<td>TaosData</td>
+<td>TDengine IDMP plugin with packaged skills for discovery, schema inspection, and safe operational workflows.</td>
+<td><code>/plugin install idmp-plugin@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>jdtls-lsp</strong></td>
+<td>Anthropic</td>
+<td>Java language server (Eclipse JDT.LS) for code intelligence</td>
+<td><code>/plugin install jdtls-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>kotlin-lsp</strong></td>
+<td>Anthropic</td>
+<td>Kotlin language server for code intelligence</td>
+<td><code>/plugin install kotlin-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/laravel-boost"><strong>laravel-boost</strong></a></td>
+<td></td>
+<td>Laravel development toolkit MCP server. Provides intelligent assistance for Laravel applications including Artisan commands, Eloquent queries, routing, migrations, and framework-specific code generation.</td>
+<td><code>/plugin install laravel-boost@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-lsp"><strong>liquid-lsp</strong></a></td>
+<td>Shopify</td>
+<td>LSP integration for Shopify Liquid templates via the Shopify CLI theme language server.</td>
+<td><code>/plugin install liquid-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/Shopify/liquid-skills/tree/main/plugins/liquid-skills"><strong>liquid-skills</strong></a></td>
+<td>Shopify</td>
+<td>Liquid language fundamentals, CSS/JS/HTML coding standards, and WCAG accessibility patterns for Shopify themes</td>
+<td><code>/plugin install liquid-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://lovable.dev"><strong>lovable</strong></a></td>
+<td>Lovable</td>
+<td>Build, iterate on, deploy, and manage Lovable apps from Claude Code. Bundles the official Lovable MCP server (remote, OAuth 2.1) and adds focused commands for the common build/iterate/database workflows, with credit- and publish-safety prompts.</td>
+<td><code>/plugin install lovable@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>lua-lsp</strong></td>
+<td>Anthropic</td>
+<td>Lua language server for code intelligence</td>
+<td><code>/plugin install lua-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.ory.sh"><strong>lumen</strong></a></td>
+<td>Ory Corp</td>
+<td>Precise local semantic code search via MCP. Indexes your codebase with Go AST parsing, embeds with Ollama or LM Studio, and exposes vector search to Claude through an MCP server — no cloud, no npm.</td>
+<td><code>/plugin install lumen@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/mattpocock/skills"><strong>mattpocock-skills</strong></a></td>
+<td>Matt Pocock</td>
+<td>Matt Pocock's agent skills for real engineering — grilling, spec/ticket flows, TDD, code review, domain modelling and more. Plug-and-play, not vibe coding.</td>
+<td><code>/plugin install mattpocock-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://modelcontextprotocol.io"><strong>mcp-apps</strong></a></td>
+<td>Anthropic / Model Context Protocol</td>
+<td>Skills for creating MCP Apps with the MCP Apps SDK</td>
+<td><code>/plugin install mcp-apps@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev"><strong>mcp-server-dev</strong></a></td>
+<td>Anthropic</td>
+<td>Skills for designing and building MCP servers that work seamlessly with Claude. Guides you through deployment models (remote HTTP, MCPB, local), tool design patterns, auth, and interactive MCP apps.</td>
+<td><code>/plugin install mcp-server-dev@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-tunnels"><strong>mcp-tunnels</strong></a></td>
+<td>Anthropic</td>
+<td>Connect Claude to a private MCP server through an Anthropic MCP tunnel. The /create-docker-mcp-tunnel command drives the Docker Compose quickstart end to end: certificates, proxy config, cloudflared, and a verifiable sample server.</td>
+<td><code>/plugin install mcp-tunnels@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/mercadopago/mercadopago-claude-marketplace/tree/main/plugins/mercadopago"><strong>mercadopago</strong></a></td>
+<td>Mercado Pago Developer Experience</td>
+<td>Mercado Pago full-product integration toolkit. One agent routes to four orchestration skills (mp-integrate wizard, mp-webhooks, mp-test-setup, mp-review) that pull every endpoint, payload, and snippet live from the official Mercado Pago MCP server. The MCP must always be connected — there is no offline mode.</td>
+<td><code>/plugin install mercadopago@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://mergify.com"><strong>mergify</strong></a></td>
+<td>Mergify</td>
+<td>Skills for the Mergify CLI: manage merge queues, stacked pull requests, Test Insights (flaky tests, quarantine), merge protections, and Mergify configuration directly from the terminal.</td>
+<td><code>/plugin install mergify@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/microsoftdocs/mcp"><strong>microsoft-docs</strong></a></td>
+<td></td>
+<td>Access official Microsoft documentation, API references, and code samples for Azure, .NET, Windows, and more.</td>
+<td><code>/plugin install microsoft-docs@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/awslabs/startups"><strong>migration-to-aws</strong></a></td>
+<td>Amazon Web Services</td>
+<td>Plan a migration from Google Cloud Platform (and OpenAI/Gemini AI workloads) to AWS. Analyzes your Infrastructure-as-Code files, app code, and GCP billing data to discover resources, design an AWS architecture, estimate costs, and generate migration artifacts — including AI-provider mapping to Amazon Bedrock. Processing is local; your data stays in your environment.</td>
+<td><code>/plugin install migration-to-aws@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.mintlify.com/"><strong>mintlify</strong></a></td>
+<td></td>
+<td>Build beautiful documentation sites with Mintlify. Convert non-markdown files into properly formatted MDX pages, add and modify content with correct component use, and automate documentation updates.</td>
+<td><code>/plugin install mintlify@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://goo.gle/modern-web-guidance"><strong>modern-web-guidance</strong></a></td>
+<td>Google Chrome</td>
+<td>Keep your coding agent up to date with the latest web best practices</td>
+<td><code>/plugin install modern-web-guidance@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/netlify/context-and-tools"><strong>netlify-skills</strong></a></td>
+<td></td>
+<td>Netlify platform skills for Claude Code — functions, edge functions, blobs, database, image CDN, forms, config, CLI, frameworks, caching, AI gateway, and deployment.</td>
+<td><code>/plugin install netlify-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/oracle/netsuite-suitecloud-sdk/tree/ai-plugins-dist/anthropic/netsuite-suitecloud"><strong>netsuite-suitecloud</strong></a></td>
+<td>Oracle NetSuite</td>
+<td>Develop NetSuite SuiteCloud solutions with SuiteScript, SDF, and best practices: SuiteScript records and upgrades, SDF objects, roles and permissions, UIF single-page apps, OWASP secure coding, project documentation, and the SAFE Guide.</td>
+<td><code>/plugin install netsuite-suitecloud@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://build.nvidia.com/skills/"><strong>nvidia-skills</strong></a></td>
+<td>NVIDIA</td>
+<td>Find the right NVIDIA skill for GPU acceleration, CUDA, AI agents, data loading, training, inference, robotics, Physical AI, Omniverse, simulation, and other NVIDIA-powered workflows.</td>
+<td><code>/plugin install nvidia-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html"><strong>oracle-ai-data-platform-workbench-databricks-migrator</strong></a></td>
+<td>Oracle</td>
+<td>Drive the Oracle AI Data Platform (AIDP) Databricks Migration Toolkit in natural language. Plans and executes automated Databricks → AIDP migrations of notebooks, jobs, schedules, and catalog DDL — Pass-1 dependency rewrite + Pass-2 cell-by-cell execute/verify/fix on a live AIDP cluster with Claude.</td>
+<td><code>/plugin install oracle-ai-data-platform-workbench-databricks-migrator@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html"><strong>oracle-ai-data-platform-workbench-engineer-agent</strong></a></td>
+<td>Oracle</td>
+<td>Oracle AI Data Platform (AIDP) Workbench engineer agent for Claude Code — a 37-skill agent that operates the full Spark/Delta lakehouse in natural language. Discovers your catalog into a grounding cache, turns plain English into accurate Spark SQL, and runs the lifecycle (CREATE/INSERT/UPDATE/DELETE/MERGE, OPTIMIZE/VACUUM, time-travel). Ingests files, profiles data and sets quality rules, authors and repairs pipelines, provisions clusters, and debugs via the Spark UI. Governs the platform (roles, credential store, Delta Sharing, audit logs), plus native Git, bundles, and MLOps/MLflow. Runs via the official Oracle aidp CLI.</td>
+<td><code>/plugin install oracle-ai-data-platform-workbench-engineer-agent@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.oracle.com/en/cloud/paas/ai-data-platform/index.html"><strong>oracle-ai-data-platform-workbench-spark-connectors</strong></a></td>
+<td>Oracle</td>
+<td>Oracle AI Data Platform Workbench Spark connectors for Claude Code. 18 connector skills covering every data source workbench customers commonly need: Oracle Autonomous DB family (ALH/ADW/ATP) via wallet/IAM-DB-Token/API-key, ExaCS, Fusion ERP REST, Fusion BICC, EPM Cloud Planning, Essbase 21c, OCI Streaming (Kafka), OCI Object Storage, Apache Iceberg, plus external systems (PostgreSQL, MySQL/HeatWave, SQL Server, Snowflake, Azure ADLS Gen2, AWS S3, generic REST, custom JDBC, Excel). Live-validated on the workbench <code>tpcds</code> cluster (Spark 3.5.0): 17 PASS / 4 ship-as-is out of 21 test rows.</td>
+<td><code>/plugin install oracle-ai-data-platform-workbench-spark-connectors@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://output.ai"><strong>outputai</strong></a></td>
+<td>Output.ai</td>
+<td>Output.ai workflow development toolkit for Claude Code. Adds 5 specialist agents (planner, builder, debugger, prompt writer, quality reviewer), 40+ slash-command skills covering scaffolding, debugging, evaluation, and credential management, plus a SessionStart hook that auto-loads Output SDK conventions so Claude understands the framework before the first prompt.</td>
+<td><code>/plugin install outputai@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://developer.paypal.com/"><strong>paypal</strong></a></td>
+<td>PayPal</td>
+<td>PayPal development plugin for Claude — integrate payments, subscriptions, invoices, disputes, and more using PayPal's APIs and MCP server</td>
+<td><code>/plugin install paypal@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>php-lsp</strong></td>
+<td>Anthropic</td>
+<td>PHP language server (Intelephense) for code intelligence</td>
+<td><code>/plugin install php-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.pixeltable.com"><strong>pixeltable</strong></a></td>
+<td>Pixeltable</td>
+<td>Build multimodal AI applications with Pixeltable -- tables, computed columns, embedding search, UDFs, tool-calling agents, and 25+ AI provider integrations.</td>
+<td><code>/plugin install pixeltable@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/playground"><strong>playground</strong></a></td>
+<td>Anthropic</td>
+<td>Creates interactive HTML playgrounds — self-contained single-file explorers with visual controls, live preview, and prompt output with copy button. Includes templates for design playgrounds, data explorers, concept maps, and document critique.</td>
+<td><code>/plugin install playground@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/plugins/plugin-dev"><strong>plugin-dev</strong></a></td>
+<td>Anthropic</td>
+<td>Comprehensive toolkit for developing Claude Code plugins. Includes 7 expert skills covering hooks, MCP integration, commands, agents, and best practices. AI-assisted plugin creation and validation.</td>
+<td><code>/plugin install plugin-dev@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/postmanlabs/postman-plugin"><strong>postman</strong></a></td>
+<td></td>
+<td>Work with Postman from your agent: bootstrap a repo's Postman setup, mock an API before it's implemented, run collection and governance checks in CI, monitor a live endpoint, deploy and debug Postman Flows, and publish generated API documentation.</td>
+<td><code>/plugin install postman@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.preset.io"><strong>preset-cli-skills</strong></a></td>
+<td>Preset</td>
+<td>Preset CLI skills for explicit shell, scripting, and CI/CD workflows driven by the <code>sup</code> CLI (PyPI package <code>superset-sup</code>). Use only for CLI workflows; do not use for MCP-only work or as a substitute for direct API calls when the user wants HTTP/SDK code.</td>
+<td><code>/plugin install preset-cli-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/pydantic/skills/tree/main/plugins/ai"><strong>pydantic-ai</strong></a></td>
+<td></td>
+<td>Write accurate Pydantic AI code from the start. Up-to-date patterns, decision trees, and common gotchas for agents, tools, structured output, streaming, and multi-agent apps.</td>
+<td><code>/plugin install pydantic-ai@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>pyright-lsp</strong></td>
+<td>Anthropic</td>
+<td>Python language server (Pyright) for type checking and code intelligence</td>
+<td><code>/plugin install pyright-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/qodo-ai/qodo-skills.git"><strong>qodo</strong></a></td>
+<td>Qodo</td>
+<td>Bring Qodo's codebase intelligence, coding standards, and code review into your coding agent.</td>
+<td><code>/plugin install qodo@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/qodo-ai/qodo-skills.git"><strong>qodo-standards</strong></a></td>
+<td>Qodo</td>
+<td>Optional Qodo rules discovery and standards administration workflows.</td>
+<td><code>/plugin install qodo-standards@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.qt.io/"><strong>qt-development-skills</strong></a></td>
+<td>Qt Group</td>
+<td>Agentic engineering skills for Qt software development — Qt C++/QML code review, QML coding, and Qt C++/QML code documentation.</td>
+<td><code>/plugin install qt-development-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://quarkus.io"><strong>quarkus-agent</strong></a></td>
+<td>Quarkus</td>
+<td>MCP server for AI coding agents to create, manage, and interact with Quarkus applications. Provides tools for project scaffolding, dev mode lifecycle, extension skills, Dev MCP proxy, and documentation search.</td>
+<td><code>/plugin install quarkus-agent@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/plugins/ralph-loop"><strong>ralph-loop</strong></a></td>
+<td>Anthropic</td>
+<td>Interactive self-referential AI loops for iterative development, implementing the Ralph Wiggum technique. Claude works on the same task repeatedly, seeing its previous work, until completion.</td>
+<td><code>/plugin install ralph-loop@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.revenuecat.com"><strong>rc</strong></a></td>
+<td></td>
+<td>Configure RevenueCat projects, apps, products, entitlements, and offerings directly from Claude Code. Manage your in-app purchase backend without leaving your development workflow.</td>
+<td><code>/plugin install rc@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://resend.com"><strong>resend</strong></a></td>
+<td>Resend</td>
+<td>Agent skills for working with Resend to send and receive emails — email API integration, agent inbox, CLI, React Email components, and deliverability best practices. Includes the Resend MCP server.</td>
+<td><code>/plugin install resend@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.revenuecat.com"><strong>revenuecat</strong></a></td>
+<td></td>
+<td>Configure RevenueCat projects, apps, products, entitlements, and offerings directly from Claude Code. Manage your in-app purchase backend without leaving your development workflow.</td>
+<td><code>/plugin install revenuecat@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.rilldata.com/developers/build/ai-configuration"><strong>rill</strong></a></td>
+<td>Rill Data</td>
+<td>Skills for developing and querying projects in the Rill business intelligence platform</td>
+<td><code>/plugin install rill@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>ruby-lsp</strong></td>
+<td>Anthropic</td>
+<td>Ruby language server for code intelligence and analysis</td>
+<td><code>/plugin install ruby-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>rust-analyzer-lsp</strong></td>
+<td>Anthropic</td>
+<td>Rust language server for code intelligence and analysis</td>
+<td><code>/plugin install rust-analyzer-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/awslabs/agent-plugins"><strong>sagemaker-ai</strong></a></td>
+<td></td>
+<td>Build, train, and deploy AI models with deep AWS AI/ML expertise brought directly into your coding assistants, covering the surface area of Amazon SageMaker AI.</td>
+<td><code>/plugin install sagemaker-ai@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/forcedotcom/sf-skills/tree/main/plugins/builder/salesforce-development"><strong>salesforce-development</strong></a></td>
+<td>Salesforce</td>
+<td>Build Salesforce apps and agents using these core building blocks: metadata, Apex, deploy/retrieve, security, reporting, and generated installed-versus-available capability discovery.</td>
+<td><code>/plugin install salesforce-development@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.sanity.io"><strong>sanity</strong></a></td>
+<td>Sanity</td>
+<td>Sanity content platform integration with MCP server, agent skills, and slash commands. Query and author content, build and optimize GROQ queries, design schemas, and set up Visual Editing.</td>
+<td><code>/plugin install sanity@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://cap.cloud.sap/"><strong>sap-cds-mcp</strong></a></td>
+<td>SAP SE</td>
+<td>AI-assisted development of SAP Cloud Application Programming Model (CAP) projects. Search CDS models and CAP documentation.</td>
+<td><code>/plugin install sap-cds-mcp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/SAP/open-ux-tools/tree/main/packages/fiori-mcp-server"><strong>sap-fiori-mcp-server</strong></a></td>
+<td>SAP SE</td>
+<td>MCP server for SAP Fiori development tools for Claude Code. Build and modify SAP Fiori applications with AI assistance.</td>
+<td><code>/plugin install sap-fiori-mcp-server@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://help.sap.com/docs/MDK"><strong>sap-mdk-server</strong></a></td>
+<td>SAP SE</td>
+<td>MCP server for SAP Mobile Development Kit (MDK). Build and modify MDK applications with AI assistance — schema lookups, action validation, rule editing, and project scaffolding.</td>
+<td><code>/plugin install sap-mdk-server@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.scandit.com"><strong>scandit-sdk</strong></a></td>
+<td>Scandit</td>
+<td>AI agent skills for integrating the Scandit Data Capture SDK — product selection, documentation, and implementation guides for barcode scanning, ID capture, and smart label capture.</td>
+<td><code>/plugin install scandit-sdk@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/serena"><strong>serena</strong></a></td>
+<td></td>
+<td>Semantic code analysis MCP server providing intelligent code understanding, refactoring suggestions, and codebase navigation through language server protocol integration.</td>
+<td><code>/plugin install serena@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://servicenow.github.io/sdk/"><strong>servicenow-sdk</strong></a></td>
+<td>ServiceNow</td>
+<td>Create, edit, and deploy ServiceNow applications with the Fluent SDK effortlessly through Claude AI.</td>
+<td><code>/plugin install servicenow-sdk@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-agent-analytics"><strong>setup-agent-analytics</strong></a></td>
+<td>Pendo</td>
+<td>Detect AI agents in your codebase and instrument them with Pendo Agent Analytics via the best-fit path: Python SDK, TypeScript SDK, client-side trackAgent(), or the Conversations API.</td>
+<td><code>/plugin install setup-agent-analytics@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/pendo-io/claude-pendo-plugin/tree/main/plugins/setup-mcp-agent-analytics"><strong>setup-mcp-agent-analytics</strong></a></td>
+<td>Pendo</td>
+<td>Detect an MCP server's language (Python, TypeScript or Go) and instrument it with the matching Pendo SDK so MCP tool calls flow into Pendo Agent Analytics.</td>
+<td><code>/plugin install setup-mcp-agent-analytics@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://shopify.dev"><strong>shopify-ai-toolkit</strong></a></td>
+<td>Shopify</td>
+<td>Shopify's AI Toolkit provides 18 development skills for building on the Shopify platform, covering documentation search, API schema access, GraphQL and Liquid code validation, Hydrogen storefronts, Polaris UI extensions, store management via CLI, and onboarding guidance for both developers and merchants.</td>
+<td><code>/plugin install shopify-ai-toolkit@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator"><strong>skill-creator</strong></a></td>
+<td>Anthropic</td>
+<td>Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.</td>
+<td><code>/plugin install skill-creator@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.snowflake.com/en/user-guide/cortex-code"><strong>snowflake-cortex-code</strong></a></td>
+<td>Snowflake</td>
+<td>Automatically route Snowflake prompts from Claude Code to Cortex Code for execution. Provides slash commands for code review and task delegation, plus skills for routing, run, and setup.</td>
+<td><code>/plugin install snowflake-cortex-code@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://sourcegraph.com"><strong>sourcegraph</strong></a></td>
+<td></td>
+<td>Code search and understanding across codebases. Search, read, and trace references across repositories; analyze refactor impact; investigate incidents via commit and diff search; run targeted security sweeps.</td>
+<td><code>/plugin install sourcegraph@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.confluent.io"><strong>streaming-skills-plugin</strong></a></td>
+<td>Confluent</td>
+<td>Skills for streaming application developers, covering Kafka and Flink client libraries and Schema Registry</td>
+<td><code>/plugin install streaming-skills-plugin@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/stripe/ai/tree/main/providers/claude/plugin"><strong>stripe</strong></a></td>
+<td></td>
+<td>Stripe development plugin for Claude</td>
+<td><code>/plugin install stripe@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.sumup.com/"><strong>sumup</strong></a></td>
+<td></td>
+<td>SumUp payment integrations across terminal and online checkout flows. Build Android and iOS POS apps with SumUp card readers, online checkout with server SDKs and the checkout widget, and control card readers remotely via Cloud API.</td>
+<td><code>/plugin install sumup@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/obra/superpowers.git"><strong>superpowers</strong></a></td>
+<td></td>
+<td>Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teaches Claude how to author and test new skills.</td>
+<td><code>/plugin install superpowers@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>swift-lsp</strong></td>
+<td>Anthropic</td>
+<td>Swift language server (SourceKit-LSP) for code intelligence</td>
+<td><code>/plugin install swift-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.tavily.com/"><strong>tavily</strong></a></td>
+<td>Tavily Team</td>
+<td>Build AI applications with real-time web data using Tavily's search, extract, crawl, and research APIs.</td>
+<td><code>/plugin install tavily@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.jetbrains.com/teamcity/"><strong>teamcity-cli</strong></a></td>
+<td>JetBrains</td>
+<td>Agent skill for interacting with TeamCity CI/CD using the teamcity CLI. Enables Claude to explore builds, view logs, start jobs, manage queues, agents, and more.</td>
+<td><code>/plugin install teamcity-cli@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/terraform"><strong>terraform</strong></a></td>
+<td>HashiCorp</td>
+<td>The Terraform MCP Server provides seamless integration with Terraform ecosystem, enabling advanced automation and interaction capabilities for Infrastructure as Code (IaC) development.</td>
+<td><code>/plugin install terraform@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.together.ai"><strong>togetherai-skills</strong></a></td>
+<td>Together AI</td>
+<td>Agent Skills for Together AI platform — inference, training, embeddings, audio, video, images, function calling, and infrastructure. Covers serverless chat completions, image/video generation, fine-tuning, batch inference, evaluations, sandboxes, dedicated endpoints, and GPU clusters.</td>
+<td><code>/plugin install togetherai-skills@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://www.twilio.com"><strong>twilio-developer-kit</strong></a></td>
+<td>Twilio</td>
+<td>Twilio Skills provide procedural knowledge for AI coding agents — which APIs to use, in what order, and what to avoid. Covers SMS, Voice, WhatsApp, Verify, SendGrid, Compliance, and 30+ products.</td>
+<td><code>/plugin install twilio-developer-kit@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><strong>typescript-lsp</strong></td>
+<td>Anthropic</td>
+<td>TypeScript/JavaScript language server for enhanced code intelligence</td>
+<td><code>/plugin install typescript-lsp@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/UI5/plugins-coding-agents"><strong>ui5</strong></a></td>
+<td>SAP SE</td>
+<td>SAPUI5 / OpenUI5 plugin for coding agents. Create and validate UI5 projects, access API documentation, run UI5 linter, get development guidelines and best practices for UI5 development.</td>
+<td><code>/plugin install ui5@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/UI5/plugins-coding-agents"><strong>ui5-modernization</strong></a></td>
+<td>SAP SE</td>
+<td>Complete UI5 modernization toolkit with workflow and specialized fix patterns for modernizing SAPUI5/OpenUI5 applications.</td>
+<td><code>/plugin install ui5-modernization@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://github.com/UI5/plugins-coding-agents"><strong>ui5-typescript-conversion</strong></a></td>
+<td>SAP SE</td>
+<td>SAPUI5 / OpenUI5 plugin for coding agents. Convert JavaScript based UI5 projects to TypeScript.</td>
+<td><code>/plugin install ui5-typescript-conversion@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://unity.com"><strong>unity</strong></a></td>
+<td>Unity Technologies</td>
+<td>Unity's official plugin for Claude Code, with curated skills for game development, monetization, and performance optimization.</td>
+<td><code>/plugin install unity@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://dev.epicgames.com/documentation/unreal-engine/unreal-mcp-in-unreal-editor"><strong>unreal-engine-skills-for-claude-code</strong></a></td>
+<td>Epic Games</td>
+<td>Control Unreal Editor directly from Claude Code via MCP. Hundreds of tools exposed via Unreal's ToolsetRegistry across 30+ toolsets: actors, blueprints, materials, Niagara, Control Rigs, Sequencer, State Trees, widgets, Gameplay Ability System, automation testing, and more.</td>
+<td><code>/plugin install unreal-engine-skills-for-claude-code@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://dev.wix.com/docs/wix-cli/guides/development/about-wix-skills"><strong>wix</strong></a></td>
+<td></td>
+<td>Build, manage, and deploy Wix sites and apps. CLI development skills for dashboard extensions, backend APIs, site widgets, and service plugins with the Wix Design System, plus MCP server for site management.</td>
+<td><code>/plugin install wix@claude-plugins-official</code></td>
+</tr>
+<tr>
+<td><a href="https://developers.zoom.us/"><strong>zoom-plugin</strong></a></td>
+<td></td>
+<td>Claude plugin for planning, building, and debugging Zoom integrations across REST APIs, SDKs, webhooks, bots, and MCP workflows.</td>
+<td><code>/plugin install zoom-plugin@claude-plugins-official</code></td>
+</tr>
+</tbody>
+</table></article><nav class="pager"><a href="../catalogus/index.html"><small>Previous</small>Overview</a><a href="../catalogus/productivity.html"><small>Next</small>Productivity (69)</a></nav>
+<footer>Unofficial wiki by LRvdLinden · Claude is a product of Anthropic · <a href="https://github.com/LRvdLinden/app.lrvdlinen.claudwiki">Source on GitHub</a></footer></main></div>
+<script>window.PREFIX="../";window.UI={"ask": "Ask the Skill adviser →", "asksub": "Describe what you want and get the best skill"};</script><script src="../../site.js" defer></script></body></html>

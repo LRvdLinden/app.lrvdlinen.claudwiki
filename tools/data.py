@@ -634,3 +634,7 @@ add(slug="template", name="Skill-template & specificatie", cat="bouwen", icon="f
 from data2 import NEWCATS, S2
 CATS += NEWCATS
 S += S2
+
+from data3 import NEWCATS3, S3
+CATS += NEWCATS3
+S += S3

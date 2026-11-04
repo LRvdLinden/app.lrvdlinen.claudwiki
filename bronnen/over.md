@@ -1,6 +1,6 @@
 ---
 description: >-
-  Over deze wiki en hoe je kunt bijdragen.
+  Over de Claude Wiki: wie hem maakt, dat hij onofficieel is en hoe je zelf een skill of verbetering kunt toevoegen.
 icon: circle-info
 cover: ../.gitbook/assets/cover-home.png
 coverY: 0

@@ -547,7 +547,7 @@ w("bronnen/README.md", fm("compass", "Waar je nieuwe skills vindt: marketplaces,
 | **Claude Code** | Claude als agent in je terminal, IDE, desktop of browser |
 """)
 
-w("bronnen/faq.md", fm("circle-question", "Veelgestelde vragen over Claude-skills.", "bronnen", 1) + """# Veelgestelde vragen
+w("bronnen/faq.md", fm("circle-question", "Veelgestelde vragen over Claude-skills: wat ze kosten, installeren, de Claude-app tegenover Claude Code en delen met je team.", "bronnen", 1) + """# Veelgestelde vragen
 
 <details>
 <summary>Kosten skills geld?</summary>
@@ -589,7 +589,7 @@ In Claude Code: zet ze in `.claude/skills/` in je repo of maak een eigen marketp
 </details>
 """)
 
-w("bronnen/over.md", fm("circle-info", "Over deze wiki en hoe je kunt bijdragen.", "home", 1) + """# Over deze wiki
+w("bronnen/over.md", fm("circle-info", "Over de Claude Wiki: wie hem maakt, dat hij onofficieel is en hoe je zelf een skill of verbetering kunt toevoegen.", "home", 1) + """# Over deze wiki
 
 De **Claude Wiki** is een onofficiële, Nederlandstalige gids over Claude-skills, gemaakt door **LRvdLinden**. Deze wiki is niet verbonden aan Anthropic. Claude is een product van Anthropic.
 
@@ -693,6 +693,7 @@ for p in M:
 os.makedirs(os.path.join(ROOT, "docs"), exist_ok=True)
 os.makedirs(os.path.join(ROOT, "docs", "adviseur"), exist_ok=True)
 json.dump(ADV, open(os.path.join(ROOT, "docs", "adviseur", "skills.json"), "w"), ensure_ascii=False)
+json.dump(ADV, open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "adv_nl.json"), "w"), ensure_ascii=False)
 
 # ═════════ Installeerbare zoek-skill ═════════
 lines = ["# Catalogus", "", "Formaat: naam | categorie | werkt in | wat het doet | installeren | wikipagina", ""]
@@ -814,7 +815,7 @@ def adv_html(base, home):
 full = ('<!doctype html><html lang="nl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
         '<meta name="description" content="Vertel wat je wilt doen en krijg de best passende Claude-skill, met installatiecommando.">'
         '<link rel="icon" href="../assets/mark.png"><style>[hidden]{display:none!important}</style></head><body>' + adv_html("../", "../index.html") + '</body></html>')
-w("docs/adviseur/index.html", full)
+pass  # adviseur-HTML wordt nu door build_site.py gemaakt
 art = os.environ.get("ARTIFACT_OUT")
 if art:
     open(art, "w").write(adv_html(SITE, SITE))

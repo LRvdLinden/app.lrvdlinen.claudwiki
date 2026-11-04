@@ -30,6 +30,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .sres a:hover,.sres a.sel{background:var(--panel)}
 .sres strong{font:600 14px var(--display);display:block}
 .sres span{font-size:13px;color:var(--muted)}
+.lang{flex:none;font:600 13px var(--display);text-decoration:none;color:var(--fg);border:1px solid var(--line);background:var(--surface);padding:8px 11px;border-radius:10px}
+.lang:hover{border-color:var(--accent)}
 .adv{flex:none;font:600 14px var(--display);text-decoration:none;background:var(--accent);color:#fff;padding:9px 14px;border-radius:10px}
 
 /* layout */
@@ -111,7 +113,22 @@ footer{max-width:780px;margin:40px auto 0;padding-top:18px;border-top:1px solid 
   body.nav-open .side{transform:none}
   .brand small{display:none}
   .adv{display:none}
+  .lang span{display:none}
   .search{max-width:none}
 }
 @media (max-width:520px){.brand span{display:none}.pager{grid-template-columns:1fr}.pager a:last-child{text-align:left}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Terminal-animatie (Claude Code-stijl) */
+.term{max-width:780px;margin:26px auto 8px;border-radius:14px;overflow:hidden;background:#1A1918;border:1px solid #33312E;box-shadow:0 18px 50px rgb(20 20 19/.18);font:13.5px/1.65 var(--mono);color:#E8E6DC}
+.term-bar{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#242321;border-bottom:1px solid #33312E}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#4A4844}.term-bar i:nth-child(1){background:#E0765F}.term-bar i:nth-child(2){background:#D9A54A}.term-bar i:nth-child(3){background:#788C5D}
+.term-bar span{margin-left:8px;font:500 12px var(--display);color:#B0AEA5}
+.term-body{padding:16px 18px 18px;min-height:250px;white-space:pre-wrap;overflow-wrap:anywhere}
+.term-line{display:block;min-height:1.65em}
+.t-dim{color:#8F8D86}.t-acc{color:#E08A6D}.t-ok{color:#9BB07F}.t-blue{color:#8DB4DA}.t-user{color:#FAF9F5}
+.t-box{display:block;border:1px solid #4A4844;border-radius:8px;padding:6px 10px;margin:6px 0}
+.cursor{display:inline-block;width:.6em;height:1.1em;vertical-align:-2px;background:#E08A6D;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.t-spin{color:#E08A6D}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}}

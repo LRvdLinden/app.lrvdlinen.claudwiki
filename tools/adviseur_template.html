@@ -185,7 +185,7 @@ function search(q){
   const res = [];
   for(const x of IDX){
     if(!useMp && x.d.src==='mp') continue;
-    if(filter==='app' && !/claude-app/i.test(x.d.w)) continue;
+    if(filter==='app' && !/claude[- ]app/i.test(x.d.w)) continue;
     if(filter==='code' && !/claude code/i.test(x.d.w)) continue;
     let s=0, matched=0; const why=[];
     for(const g of T){

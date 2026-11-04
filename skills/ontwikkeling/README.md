@@ -35,6 +35,11 @@ Voor wie met Claude Code bouwt: engineering-workflows, code reviews, testen, MCP
 <tr><td><strong>Playwright Skill</strong></td><td>Laat Claude zelf Playwright-scripts schrijven en draaien, van simpele paginatests tot lange flows.</td><td><a href="playwright-skill.md">playwright-skill.md</a></td><td></td></tr>
 <tr><td><strong>Context Engineering Kit</strong></td><td>Geavanceerde technieken: DDD, kaizen, subagent-driven development, critique en prompt engineering.</td><td><a href="context-engineering-kit.md">context-engineering-kit.md</a></td><td></td></tr>
 <tr><td><strong>Everything Claude Code (ECC)</strong></td><td>Een complete 'agent harness': agents, skills, commando's, hooks en regels in één groot pakket.</td><td><a href="everything-claude-code.md">everything-claude-code.md</a></td><td></td></tr>
+<tr><td><strong>Context7</strong></td><td>Haalt actuele, versie-specifieke documentatie en codevoorbeelden op, zodat Claude geen verouderde API's gebruikt.</td><td><a href="context7.md">context7.md</a></td><td></td></tr>
+<tr><td><strong>Playwright (MCP)</strong></td><td>De Playwright MCP-server van Microsoft: Claude bedient een browser, maakt screenshots en test je webapp.</td><td><a href="playwright-mcp.md">playwright-mcp.md</a></td><td></td></tr>
+<tr><td><strong>Chrome DevTools</strong></td><td>Bedien en inspecteer een live Chrome-browser: performance-traces, netwerkverkeer en console-fouten.</td><td><a href="chrome-devtools.md">chrome-devtools.md</a></td><td></td></tr>
+<tr><td><strong>Learning & Explanatory output styles</strong></td><td>Laat Claude uitleggen wat hij doet (Explanatory) of jou zelf stukken code laten schrijven om van te leren (Learning).</td><td><a href="output-styles.md">output-styles.md</a></td><td></td></tr>
+<tr><td><strong>Session Report</strong></td><td>Maakt een interactief HTML-rapport van je Claude Code-gebruik: tokens, cache, subagents, skills en de duurste prompts.</td><td><a href="session-report.md">session-report.md</a></td><td></td></tr>
 </tbody></table>
 
 ## Snel overzicht
@@ -52,3 +57,8 @@ Voor wie met Claude Code bouwt: engineering-workflows, code reviews, testen, MCP
 | [Playwright Skill](playwright-skill.md) | Claude Code (+ Cursor en meer) | lackeyjb (community) |
 | [Context Engineering Kit](context-engineering-kit.md) | Claude Code (+ OpenCode, Cursor en meer) | NeoLab (community) |
 | [Everything Claude Code (ECC)](everything-claude-code.md) | Claude Code (+ andere agents) | affaan-m (community) |
+| [Context7](context7.md) | Claude Code | Upstash · officiële Claude-marketplace |
+| [Playwright (MCP)](playwright-mcp.md) | Claude Code | Microsoft · officiële Claude-marketplace |
+| [Chrome DevTools](chrome-devtools.md) | Claude Code | Google · officiële Claude-marketplace |
+| [Learning & Explanatory output styles](output-styles.md) | Claude Code | Anthropic · officiële Claude-marketplace |
+| [Session Report](session-report.md) | Claude Code | Anthropic · officiële Claude-marketplace |
