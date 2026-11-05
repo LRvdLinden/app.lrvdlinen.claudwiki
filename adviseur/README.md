@@ -21,7 +21,7 @@ layout:
 ---
 # Skill-adviseur
 
-Weet je niet welke skill je nodig hebt? Beschrijf in gewone taal wat je wilt doen, en de adviseur zoekt in **456 skills en plugins** de beste opties voor je, met uitleg en installatiecommando.
+Weet je niet welke skill je nodig hebt? Beschrijf in gewone taal wat je wilt doen, en de adviseur zoekt in **461 skills en plugins** de beste opties voor je, met uitleg en installatiecommando.
 
 <a href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/adviseur/" class="button primary" data-icon="magnifying-glass">Open de Skill-adviseur</a>
 

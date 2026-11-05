@@ -21,7 +21,7 @@ layout:
 ---
 # Alle skills
 
-Hier vind je 141 skills en skillpakketten, verdeeld over 15 categorieën. Elke pagina legt uit **wat** de skill doet, **wanneer** je hem gebruikt, geeft **voorbeelden** en laat zien **hoe je hem installeert**.
+Hier vind je 146 skills en skillpakketten, verdeeld over 16 categorieën. Elke pagina legt uit **wat** de skill doet, **wanneer** je hem gebruikt, geeft **voorbeelden** en laat zien **hoe je hem installeert**.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody>
 <tr><td><strong>Documenten & kantoor</strong></td><td>Skills die Claude echte kantoorbestanden laten maken en bewerken: Word, PDF, PowerPoint en Excel, plus hulp bij interne communicatie en samen schrijven.</td><td><a href="documenten/README.md">documenten/README.md</a></td><td><a href="../.gitbook/assets/cover-documenten.png">cover-documenten.png</a></td></tr>
@@ -39,6 +39,7 @@ Hier vind je 141 skills en skillpakketten, verdeeld over 15 categorieën. Elke p
 <tr><td><strong>Productiviteit & tools</strong></td><td>Handige alledaagse skills: bestanden en facturen ordenen, Google Workspace, NotebookLM, leren van artikelen en video's, en duizend apps koppelen.</td><td><a href="productiviteit/README.md">productiviteit/README.md</a></td><td><a href="../.gitbook/assets/cover-productiviteit.png">cover-productiviteit.png</a></td></tr>
 <tr><td><strong>Audio, beeld & visuals</strong></td><td>Spraak en muziek met ElevenLabs, afbeeldingen genereren en verbeteren, diagrammen en datavisualisaties.</td><td><a href="media/README.md">media/README.md</a></td><td><a href="../.gitbook/assets/cover-media.png">cover-media.png</a></td></tr>
 <tr><td><strong>Apps koppelen</strong></td><td>Plugins die Claude verbinden met de apps die je al gebruikt: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier en meer. Claude kan er dan zelf dingen in opzoeken en doen.</td><td><a href="koppelingen/README.md">koppelingen/README.md</a></td><td><a href="../.gitbook/assets/cover-koppelingen.png">cover-koppelingen.png</a></td></tr>
+<tr><td><strong>Sites & apps klonen</strong></td><td>Skills die een bestaande website of app analyseren en nabouwen als nette, bewerkbare code. Handig om je eigen site te migreren, verloren broncode terug te halen of te leren hoe iets gemaakt is. Kloon alleen sites en apps die van jou zijn of waarvoor je toestemming hebt.</td><td><a href="klonen/README.md">klonen/README.md</a></td><td><a href="../.gitbook/assets/cover-klonen.png">cover-klonen.png</a></td></tr>
 </tbody></table>
 
 {% hint style="info" %}

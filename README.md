@@ -21,7 +21,7 @@ layout:
 ---
 # Welkom bij de Claude Wiki
 
-**Skills maken Claude slimmer in precies het werk dat jij doet.** In deze wiki vind je 141 uitgewerkte skills in 15 categorieën plus een catalogus van alle plugins uit de officiële marketplace. We leggen in gewoon Nederlands uit wat skills zijn, hoe je ze installeert en welke skills de moeite waard zijn: van de officiële skills van Anthropic tot de toppers die influencers op Instagram en TikTok delen.
+**Skills maken Claude slimmer in precies het werk dat jij doet.** In deze wiki vind je 146 uitgewerkte skills in 16 categorieën plus een catalogus van alle plugins uit de officiële marketplace. We leggen in gewoon Nederlands uit wat skills zijn, hoe je ze installeert en welke skills de moeite waard zijn: van de officiële skills van Anthropic tot de toppers die influencers op Instagram en TikTok delen.
 
 <a href="adviseur/README.md" class="button primary" data-icon="wand-magic-sparkles">Vind jouw skill</a> <a href="basis/wat-zijn-skills.md" class="button secondary" data-icon="rocket">Begin hier</a> <a href="skills/README.md" class="button secondary" data-icon="grid-2">Bekijk alle skills</a>
 
@@ -54,6 +54,7 @@ layout:
 <tr><td><strong>Productiviteit & tools</strong></td><td>Handige alledaagse skills: bestanden en facturen ordenen, Google Workspace, NotebookLM, leren van artikelen en video's, en duizend apps koppelen.</td><td><a href="skills/productiviteit/README.md">skills/productiviteit/README.md</a></td><td><a href=".gitbook/assets/cover-productiviteit.png">cover-productiviteit.png</a></td></tr>
 <tr><td><strong>Audio, beeld & visuals</strong></td><td>Spraak en muziek met ElevenLabs, afbeeldingen genereren en verbeteren, diagrammen en datavisualisaties.</td><td><a href="skills/media/README.md">skills/media/README.md</a></td><td><a href=".gitbook/assets/cover-media.png">cover-media.png</a></td></tr>
 <tr><td><strong>Apps koppelen</strong></td><td>Plugins die Claude verbinden met de apps die je al gebruikt: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier en meer. Claude kan er dan zelf dingen in opzoeken en doen.</td><td><a href="skills/koppelingen/README.md">skills/koppelingen/README.md</a></td><td><a href=".gitbook/assets/cover-koppelingen.png">cover-koppelingen.png</a></td></tr>
+<tr><td><strong>Sites & apps klonen</strong></td><td>Skills die een bestaande website of app analyseren en nabouwen als nette, bewerkbare code. Handig om je eigen site te migreren, verloren broncode terug te halen of te leren hoe iets gemaakt is. Kloon alleen sites en apps die van jou zijn of waarvoor je toestemming hebt.</td><td><a href="skills/klonen/README.md">skills/klonen/README.md</a></td><td><a href=".gitbook/assets/cover-klonen.png">cover-klonen.png</a></td></tr>
 </tbody></table>
 
 ## Top 5 om mee te beginnen

@@ -638,3 +638,7 @@ S += S2
 from data3 import NEWCATS3, S3
 CATS += NEWCATS3
 S += S3
+
+from data4 import NEWCATS4, S4
+CATS += NEWCATS4
+S += S4

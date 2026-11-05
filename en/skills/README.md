@@ -1,6 +1,6 @@
 ---
 description: >-
-  All 141 Claude skills in this wiki, organised in 15 categories, each with examples and installation steps.
+  All 146 Claude skills in this wiki, organised in 16 categories, each with examples and installation steps.
 icon: grid-2
 cover: ../../.gitbook/assets/cover-en-home.png
 coverY: 0
@@ -21,7 +21,7 @@ layout:
 ---
 # All skills
 
-Here you'll find 141 skills and skill packs across 15 categories. Every page explains **what** the skill does, **when** you use it, gives **examples** and shows **how to install** it.
+Here you'll find 146 skills and skill packs across 16 categories. Every page explains **what** the skill does, **when** you use it, gives **examples** and shows **how to install** it.
 
 <table data-view="cards"><thead><tr><th></th><th></th><th data-hidden data-card-target data-type="content-ref"></th><th data-hidden data-card-cover data-type="files"></th></tr></thead><tbody>
 <tr><td><strong>Documents & office</strong></td><td>Skills that let Claude create and edit real office files: Word, PDF, PowerPoint and Excel, plus help with internal communication and writing together.</td><td><a href="documenten/README.md">documenten/README.md</a></td><td><a href="../../.gitbook/assets/cover-en-documenten.png">cover-en-documenten.png</a></td></tr>
@@ -39,6 +39,7 @@ Here you'll find 141 skills and skill packs across 15 categories. Every page exp
 <tr><td><strong>Productivity & tools</strong></td><td>Handy everyday skills: organising files and invoices, Google Workspace, NotebookLM, learning from articles and videos, and connecting a thousand apps.</td><td><a href="productiviteit/README.md">productiviteit/README.md</a></td><td><a href="../../.gitbook/assets/cover-en-productiviteit.png">cover-en-productiviteit.png</a></td></tr>
 <tr><td><strong>Audio, images & visuals</strong></td><td>Speech and music with ElevenLabs, generating and enhancing images, diagrams and data visualisations.</td><td><a href="media/README.md">media/README.md</a></td><td><a href="../../.gitbook/assets/cover-en-media.png">cover-en-media.png</a></td></tr>
 <tr><td><strong>Connect your apps</strong></td><td>Plugins that connect Claude to the apps you already use: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier and more. Claude can then look things up and take actions in them.</td><td><a href="koppelingen/README.md">koppelingen/README.md</a></td><td><a href="../../.gitbook/assets/cover-en-koppelingen.png">cover-en-koppelingen.png</a></td></tr>
+<tr><td><strong>Clone sites & apps</strong></td><td>Skills that analyse an existing website or app and rebuild it as clean, editable code. Handy for migrating your own site, recovering lost source code or learning how something was made. Only clone sites and apps you own or have permission for.</td><td><a href="klonen/README.md">klonen/README.md</a></td><td><a href="../../.gitbook/assets/cover-en-klonen.png">cover-en-klonen.png</a></td></tr>
 </tbody></table>
 
 {% hint style="info" %}

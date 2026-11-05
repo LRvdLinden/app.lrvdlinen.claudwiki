@@ -172,6 +172,12 @@
   * [HubSpot Sales](skills/koppelingen/hubspot-sales.md)
   * [monday CRM](skills/koppelingen/monday-crm.md)
   * [Intercom](skills/koppelingen/intercom.md)
+* [Sites & apps klonen](skills/klonen/README.md)
+  * [AI Website Cloner](skills/klonen/ai-website-cloner.md)
+  * [Perfect Web Clone](skills/klonen/perfect-web-clone.md)
+  * [Web Clone (echte bron eerst)](skills/klonen/web-clone.md)
+  * [Clone to Next.js](skills/klonen/clone-to-nextjs.md)
+  * [REA – Reverse Engineer Anything](skills/klonen/rea.md)
 
 ## Plugin-catalogus (315)
 

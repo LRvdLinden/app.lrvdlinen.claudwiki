@@ -21,7 +21,7 @@ layout:
 ---
 # Welcome to the Claude Wiki
 
-**Skills make Claude better at exactly the work you do.** This wiki has 141 skills explained in 15 categories, plus a catalogue of every plugin in the official marketplace. In plain language we explain what skills are, how to install them and which skills are worth it: from Anthropic's official skills to the favourites influencers share on Instagram and TikTok.
+**Skills make Claude better at exactly the work you do.** This wiki has 146 skills explained in 16 categories, plus a catalogue of every plugin in the official marketplace. In plain language we explain what skills are, how to install them and which skills are worth it: from Anthropic's official skills to the favourites influencers share on Instagram and TikTok.
 
 <a href="adviseur/README.md" class="button primary" data-icon="wand-magic-sparkles">Find your skill</a> <a href="basis/wat-zijn-skills.md" class="button secondary" data-icon="rocket">Start here</a> <a href="skills/README.md" class="button secondary" data-icon="grid-2">See all skills</a>
 
@@ -54,6 +54,7 @@ layout:
 <tr><td><strong>Productivity & tools</strong></td><td>Handy everyday skills: organising files and invoices, Google Workspace, NotebookLM, learning from articles and videos, and connecting a thousand apps.</td><td><a href="skills/productiviteit/README.md">skills/productiviteit/README.md</a></td><td><a href="../.gitbook/assets/cover-en-productiviteit.png">cover-en-productiviteit.png</a></td></tr>
 <tr><td><strong>Audio, images & visuals</strong></td><td>Speech and music with ElevenLabs, generating and enhancing images, diagrams and data visualisations.</td><td><a href="skills/media/README.md">skills/media/README.md</a></td><td><a href="../.gitbook/assets/cover-en-media.png">cover-en-media.png</a></td></tr>
 <tr><td><strong>Connect your apps</strong></td><td>Plugins that connect Claude to the apps you already use: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier and more. Claude can then look things up and take actions in them.</td><td><a href="skills/koppelingen/README.md">skills/koppelingen/README.md</a></td><td><a href="../.gitbook/assets/cover-en-koppelingen.png">cover-en-koppelingen.png</a></td></tr>
+<tr><td><strong>Clone sites & apps</strong></td><td>Skills that analyse an existing website or app and rebuild it as clean, editable code. Handy for migrating your own site, recovering lost source code or learning how something was made. Only clone sites and apps you own or have permission for.</td><td><a href="skills/klonen/README.md">skills/klonen/README.md</a></td><td><a href="../.gitbook/assets/cover-en-klonen.png">cover-en-klonen.png</a></td></tr>
 </tbody></table>
 
 ## Top 5 to start with

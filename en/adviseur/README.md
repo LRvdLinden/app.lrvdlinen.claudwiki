@@ -21,7 +21,7 @@ layout:
 ---
 # Skill adviser
 
-Not sure which skill you need? Describe in plain language what you want to do, and the adviser searches **456 skills and plugins** for the best options, with an explanation and install command.
+Not sure which skill you need? Describe in plain language what you want to do, and the adviser searches **461 skills and plugins** for the best options, with an explanation and install command.
 
 <a href="https://lrvdlinden.github.io/app.lrvdlinen.claudwiki/en/adviseur/" class="button primary" data-icon="magnifying-glass">Open the Skill adviser</a>
 

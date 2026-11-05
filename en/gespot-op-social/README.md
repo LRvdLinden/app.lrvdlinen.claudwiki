@@ -57,6 +57,8 @@ Bart Boonstra: 4 Claude skills you should install today
 | [Planning with Files](../skills/denken/planning-with-files.md) | Trending on GitHub | Plans that never get lost |
 | [Frontend Slides](../skills/design/frontend-slides.md) | YouTube tutorials | Animated HTML presentations |
 | [Claude-Mem](../skills/kennis/claude-mem.md) | Claude Code users | Memory between sessions |
+| [AI Website Cloner](../skills/klonen/ai-website-cloner.md) | GitHub (13,000+ stars), YouTube | Rebuild a complete website with one command |
+| [REA](../skills/klonen/rea.md) | Developer community | Work out how an app works and rebuild it |
 
 {% hint style="warning" %}
 **Influencer ≠ guarantee.** What works well in a video doesn't always work for you. Try a skill first and read [Install safely](../basis/veiligheid.md).

@@ -16,6 +16,7 @@ CATS_EN = {
     "cloud": ("Data, cloud & payments", "Official skills from Supabase, Neon, Cloudflare, AWS, Azure, HashiCorp, Hugging Face, Stripe and Sentry."),
     "productiviteit": ("Productivity & tools", "Handy everyday skills: organising files and invoices, Google Workspace, NotebookLM, learning from articles and videos, and connecting a thousand apps."),
     "koppelingen": ("Connect your apps", "Plugins that connect Claude to the apps you already use: Figma, Notion, Canva, Slack, GitHub, Jira, Zapier and more. Claude can then look things up and take actions in them."),
+    "klonen": ("Clone sites & apps", "Skills that analyse an existing website or app and rebuild it as clean, editable code. Handy for migrating your own site, recovering lost source code or learning how something was made. Only clone sites and apps you own or have permission for."),
     "media": ("Audio, images & visuals", "Speech and music with ElevenLabs, generating and enhancing images, diagrams and data visualisations."),
 }
 
